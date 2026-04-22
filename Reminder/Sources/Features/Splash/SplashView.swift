@@ -12,7 +12,7 @@ class SplashView: UIView {
     private let logoImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: <#T##String#>)
+        image.image = UIImage(named: "Logo")
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -22,6 +22,7 @@ class SplashView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Remind"
         label.font = UIFont.boldSystemFont(ofSize: 32)
+        label.textColor = .white
         return label
     }()
     
@@ -35,11 +36,28 @@ class SplashView: UIView {
     }
     
     private func setupUI(){
+        self.backgroundColor = .systemRed
+        
+        setupHierarchy()
         setupConstraints()
+        
+    }
+    
+    private func setupHierarchy(){
+        addSubview(logoImageView)
+        addSubview(titleLogoLabel)
     }
     
     private func setupConstraints(){
-        
+        NSLayoutConstraint.activate([
+            titleLogoLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 24),
+            titleLogoLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            
+            logoImageView.trailingAnchor.constraint(equalTo: titleLogoLabel.leadingAnchor, constant: -8),
+            logoImageView.centerYAnchor.constraint(equalTo: titleLogoLabel.centerYAnchor),
+            
+                       
+        ])
     }
     
     
