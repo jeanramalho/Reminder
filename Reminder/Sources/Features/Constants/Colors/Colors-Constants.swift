@@ -11,5 +11,5 @@ import UIKit
 public struct Colors {
     
     static let primaryRedBase = UIColor(red: 192/255, green: 38/255, blue: 54/255, alpha: 1)
-    st
+    static let secondaryRedLight = UIColor(red: 235/255, green: 60/255, blue: 77/255, alpha: 1)
 }
