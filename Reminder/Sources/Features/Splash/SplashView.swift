@@ -41,8 +41,8 @@ class SplashView: UIView {
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             
-            logoImageView.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: <#T##CGFloat#>),
-            logoImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: <#T##CGFloat#>),
+            logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            logoImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -Metrics.medium),
             
                        
         ])
