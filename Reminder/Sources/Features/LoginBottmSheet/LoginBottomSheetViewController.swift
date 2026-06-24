@@ -9,13 +9,20 @@ import UIKit
 
 class LoginBottomSheetViewController: UIViewController {
     
+    private let contentView: LoginBottomSheetView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
     
     private func setup() {
+        setupHierarchy()
         setupConstraints()
+    }
+    
+    private func setupHierarchy() {
+        self.view.addSubview(contentView)
     }
     
     private func setupConstraints(){
