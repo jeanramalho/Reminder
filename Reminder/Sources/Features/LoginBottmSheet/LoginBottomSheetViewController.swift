@@ -9,7 +9,8 @@ import UIKit
 
 class LoginBottomSheetViewController: UIViewController {
     
-    private let contentView: LoginBottomSheetView
+    private let contentView: LoginBottomSheetView = LoginBottomSheetView()
+    private var handleAreaHeiht: CGFloat = 50.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class LoginBottomSheetViewController: UIViewController {
     private func setup() {
         setupHierarchy()
         setupConstraints()
+        setupGesture()
     }
     
     private func setupHierarchy() {
@@ -26,6 +28,11 @@ class LoginBottomSheetViewController: UIViewController {
     }
     
     private func setupConstraints(){
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+    }
+    
+    private func setupGesture(){
         
     }
     
