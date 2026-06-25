@@ -49,7 +49,7 @@ class LoginBottomSheetViewController: UIViewController {
         
     }
     
-    private func animateShow(completion: (() -> Void)? = nil) {
+    func animateShow(completion: (() -> Void)? = nil) {
         self.view.layoutIfNeeded()
         contentView.transform = CGAffineTransform(translationX: 0, y: contentView.frame.height)
         UIView.animate(withDuration: 0.3, animations: {
