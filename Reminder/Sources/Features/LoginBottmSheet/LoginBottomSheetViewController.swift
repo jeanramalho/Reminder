@@ -30,6 +30,15 @@ class LoginBottomSheetViewController: UIViewController {
     private func setupConstraints(){
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([
+            contentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            
+        ])
+        
+        
+        
     }
     
     private func setupGesture(){
