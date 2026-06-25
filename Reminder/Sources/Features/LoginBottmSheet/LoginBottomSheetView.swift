@@ -69,6 +69,7 @@ class LoginBottomSheetView: UIView {
     }
     
     private func setupHierachy(){
+        addSubview(handleArea)
         addSubview(titleLabel)
         addSubview(emailTextField)
         addSubview(passwordTextField)
