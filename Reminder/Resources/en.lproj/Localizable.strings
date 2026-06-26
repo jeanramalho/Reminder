@@ -5,7 +5,9 @@
   Created by Jean Ramalho on 26/06/26.
   
 */
-"Entre para acessar suas receitas"
-"email@exemplo.com"
-"senha"
-"Entrar"
+
+/* MARK: - LOGIN SCREEN */
+"login.label.title" = "Entre para acessar suas receitas"
+"login.email.placeholder" = "email@exemplo.com"
+"login.password.placeholder" = "senha"
+"login.button.title" = "Entrar"
