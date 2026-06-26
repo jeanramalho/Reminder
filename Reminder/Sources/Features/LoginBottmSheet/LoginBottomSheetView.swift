@@ -47,6 +47,7 @@ class LoginBottomSheetView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = Colors.primaryRedBase
         button.layer.cornerRadius = Metrics.tiny
+        button.setTitle("Entrar", for: .normal)
         return button
     }()
     
