@@ -61,7 +61,8 @@ class LoginBottomSheetView: UIView {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = Colors.primaryRedBase
-        button.layer.cornerRadius = Metrics.tiny
+        button.layer.cornerRadius = Metrics.medium
+        button.tintColor = .white
         button.setTitle("login.button.title".localized, for: .normal)
         return button
     }()
