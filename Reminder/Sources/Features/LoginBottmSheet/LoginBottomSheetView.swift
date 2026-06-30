@@ -28,7 +28,7 @@ class LoginBottomSheetView: UIView {
     private let loginTextFieldLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "login.label.title".localized
+        label.text = "login.loginText.label.title".localized
         return label
     }()
 
@@ -43,7 +43,7 @@ class LoginBottomSheetView: UIView {
     private let passwordTextFieldLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "login.label.title".localized
+        label.text = "login.passwordText.label.title".localized
         return label
     }()
 
