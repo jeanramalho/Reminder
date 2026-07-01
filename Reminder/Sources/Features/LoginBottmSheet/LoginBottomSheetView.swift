@@ -133,6 +133,8 @@ class LoginBottomSheetView: UIView {
     
     @objc
     private func loginButtomIsTappde(){
-        
+        guard let password = passwordTextField.text else {return}
+        guard let user = emailTextField.text else {return}
+        delegate?.sendLoginData(user: user, password: password)
     }
 }

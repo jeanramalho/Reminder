@@ -14,6 +14,7 @@ class LoginBottomSheetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.delegate = self
         setup()
     }
     
@@ -59,5 +60,13 @@ class LoginBottomSheetViewController: UIViewController {
             completion?()
         }
     }
+}
+
+extension LoginBottomSheetView: LoginBottomSheetViewDelegate {
+    func sendLoginData(user: String, password: String) {
+        print(user)
+    }
+    
+    
 }
 
