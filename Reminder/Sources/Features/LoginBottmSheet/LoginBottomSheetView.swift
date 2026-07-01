@@ -69,6 +69,7 @@ class LoginBottomSheetView: UIView {
         button.tintColor = .white
         button.titleLabel?.font = Typograph.subHeading
         button.setTitle("login.button.title".localized, for: .normal)
+        button.addTarget(self, action: #selector(loginButtomIsTappde), for: .touchUpInside)
         return button
     }()
     
@@ -130,5 +131,8 @@ class LoginBottomSheetView: UIView {
         ])
     }
     
-    
+    @objc
+    private func loginButtomIsTappde(){
+        
+    }
 }
