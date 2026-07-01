@@ -9,6 +9,8 @@ import UIKit
 
 class LoginBottomSheetView: UIView {
     
+    public weak var delegate: LoginBottomSheetViewDelegate?
+    
     private let handleArea: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -127,4 +129,6 @@ class LoginBottomSheetView: UIView {
             
         ])
     }
+    
+    
 }
