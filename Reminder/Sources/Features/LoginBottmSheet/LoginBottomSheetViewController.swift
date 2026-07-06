@@ -65,7 +65,7 @@ class LoginBottomSheetViewController: UIViewController {
 
 extension LoginBottomSheetViewController: LoginBottomSheetViewDelegate {
     func sendLoginData(user: String, password: String) {
-        print(user)
+        self.viewModel.doAuth(userNameLogin: user, password: password)
     }
     
     
