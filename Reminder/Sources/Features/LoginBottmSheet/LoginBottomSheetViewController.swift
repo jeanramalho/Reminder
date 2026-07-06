@@ -62,7 +62,7 @@ class LoginBottomSheetViewController: UIViewController {
     }
 }
 
-extension LoginBottomSheetView: LoginBottomSheetViewDelegate {
+extension LoginBottomSheetViewController: LoginBottomSheetViewDelegate {
     func sendLoginData(user: String, password: String) {
         print(user)
     }
