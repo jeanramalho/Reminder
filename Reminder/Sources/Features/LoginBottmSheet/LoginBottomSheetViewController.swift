@@ -10,6 +10,7 @@ import UIKit
 class LoginBottomSheetViewController: UIViewController {
     
     private let contentView: LoginBottomSheetView = LoginBottomSheetView()
+    private let viewModel: LoginBottomSheetViewModel = LoginBottomSheetViewModel()
     private var handleAreaHeiht: CGFloat = 50.0
     
     override func viewDidLoad() {
