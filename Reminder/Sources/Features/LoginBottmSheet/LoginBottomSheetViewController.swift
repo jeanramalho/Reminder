@@ -46,7 +46,10 @@ class LoginBottomSheetViewController: UIViewController {
     
     private func bindViewModel(){
         viewModel.succesResult = { [weak self] in
-        
+        let viewController = UIViewController()
+            viewController.view.backgroundColor = .red
+            
+            self?.navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
