@@ -12,6 +12,16 @@ class LoginBottomSheetViewController: UIViewController {
     private let contentView: LoginBottomSheetView = LoginBottomSheetView()
     private let viewModel: LoginBottomSheetViewModel = LoginBottomSheetViewModel()
     private var handleAreaHeiht: CGFloat = 50.0
+    public weak var flowDelegate: LoginBottomSheetFlowDelegate?
+    
+    init(flowDelegate: LoginBottomSheetFlowDelegate){
+        self.flowDelegate = flowDelegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +56,9 @@ class LoginBottomSheetViewController: UIViewController {
     
     private func bindViewModel(){
         viewModel.succesResult = { [weak self] in
-        let viewController = UIViewController()
-            viewController.view.backgroundColor = .red
+            self?.flowDelegate?.navigateToHome()
             
-            self?.navigationController?.pushViewController(viewController, animated: true)
+           
         }
     }
     

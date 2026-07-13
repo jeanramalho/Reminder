@@ -14,7 +14,7 @@ class ReminderFlowController {
     
 //MARK: - Splash
     
-//MARK: - Login
+
     
 //MARK: - init
     public init() {
@@ -27,4 +27,18 @@ class ReminderFlowController {
         self.navigationController = UINavigationController(rootViewController: startViewController)
         return navigationController
     }
+    
+}
+
+//MARK: - Login
+extension ReminderFlowController: LoginBottomSheetFlowDelegate {
+   
+    func navigateToHome() {
+        self.navigationController?.dismiss(animated: true)
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .red
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
 }
