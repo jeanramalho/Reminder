@@ -21,7 +21,7 @@ class ReminderFlowController {
     
 //MARK: - startFlow
     func start() -> UINavigationController? {
-        let startViewController = SplashViewController()
+        let startViewController = SplashViewController(flowDelegate: self)
         self.navigationController = UINavigationController(rootViewController: startViewController)
         return navigationController
     }
