@@ -12,8 +12,6 @@ class ReminderFlowController {
 //MARK: - Properties
     private var navigationController: UINavigationController?
     
-//MARK: - Splash
-    
 
     
 //MARK: - init
@@ -42,3 +40,18 @@ extension ReminderFlowController: LoginBottomSheetFlowDelegate {
     
     
 }
+
+//MARK: - Splash
+extension ReminderFlowController: SplashFlowDelegate {
+    func openLoginBottomSheet() {
+        let loginBottomSheet = LoginBottomSheetViewController(flowDelegate: self)
+        loginBottomSheet.modalPresentationStyle = .overCurrentContext
+        loginBottomSheet.modalTransitionStyle = .crossDissolve
+        self.navigationController?.present(loginBottomSheet, animated: false) {
+            loginBottomSheet.animateShow()
+        }
+    }
+    
+        
+    }
+
