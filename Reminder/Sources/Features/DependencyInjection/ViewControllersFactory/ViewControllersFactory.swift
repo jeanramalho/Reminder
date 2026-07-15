@@ -9,13 +9,13 @@ import UIKit
 
 final class ViewControllersFactory: ViewControllersFactoryProtocol {
     
-    func makeSplashViewController() -> SplashViewController {
-        let viewController = SplashViewController(flowDelegate: self)
+    func makeSplashViewController(flowDelegate: SplashFlowDelegate) -> SplashViewController {
+        let viewController = SplashViewController(flowDelegate: flowDelegate)
         return viewController
     }
     
-    func makeLoginBottomSheetViewController() -> LoginBottomSheetViewController {
-        let viewController = LoginBottomSheetViewController(flowDelegate: self)
+    func makeLoginBottomSheetViewController(flowDelegate: LoginBottomSheetFlowDelegate) -> LoginBottomSheetViewController {
+        let viewController = LoginBottomSheetViewController(flowDelegate: flowDelegate)
         return viewController
     }
     
