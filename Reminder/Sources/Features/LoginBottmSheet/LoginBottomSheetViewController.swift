@@ -9,13 +9,16 @@ import UIKit
 
 class LoginBottomSheetViewController: UIViewController {
     
-    private let contentView: LoginBottomSheetView = LoginBottomSheetView()
+    let contentView: LoginBottomSheetView
+    
     private let viewModel: LoginBottomSheetViewModel = LoginBottomSheetViewModel()
     private var handleAreaHeiht: CGFloat = 50.0
     public weak var flowDelegate: LoginBottomSheetFlowDelegate?
     
-    init(flowDelegate: LoginBottomSheetFlowDelegate){
+    init(contentView: LoginBottomSheetView,
+         flowDelegate: LoginBottomSheetFlowDelegate){
         self.flowDelegate = flowDelegate
+        self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
     }
     
