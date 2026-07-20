@@ -71,8 +71,10 @@ class LoginBottomSheetViewController: UIViewController {
                                                 preferredStyle: .alert)
         
         let saveAction = UIAlertAction(title: "Salvar",
-                                       style: .default) {
-            
+                                       style: .default) { _ in
+            let user = User(email: email, isUserSaved: true)
+            UserDefaultsManager.saveUser(user: user)
+            self.flowDelegate?.navigateToHome()
         }
     }
     
