@@ -58,7 +58,7 @@ class LoginBottomSheetViewController: UIViewController {
     }
     
     private func bindViewModel(){
-        viewModel.succesResult = { [weak self] in
+        viewModel.succesResult = { [weak self] userNameLogin in
             self?.flowDelegate?.navigateToHome()
             
            
