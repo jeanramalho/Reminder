@@ -60,7 +60,7 @@ class LoginBottomSheetViewController: UIViewController {
     private func bindViewModel(){
         viewModel.succesResult = { [weak self] userNameLogin in
             //self?.flowDelegate?.navigateToHome()
-            self.presentSavedLoginAlert(email: userNameLogin)
+            self?.presentSavedLoginAlert(email: userNameLogin)
            
         }
     }
@@ -76,6 +76,16 @@ class LoginBottomSheetViewController: UIViewController {
             UserDefaultsManager.saveUser(user: user)
             self.flowDelegate?.navigateToHome()
         }
+        
+        let cancelAction = UIAlertAction(title: "Não",
+                                         style: .cancel) { _ in
+            
+            self.flowDelegate?.navigateToHome()
+        }
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true)
     }
     
     private func setupGesture(){
