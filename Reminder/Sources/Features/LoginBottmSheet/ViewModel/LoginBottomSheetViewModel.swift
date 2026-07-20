@@ -9,14 +9,14 @@ import FirebaseAuth
 
 class LoginBottomSheetViewModel {
     
-    var succesResult: (() -> Void)?
+    var succesResult: ((String) -> Void)?
 
     func doAuth(userNameLogin: String, password: String) {
         Auth.auth().signIn(withEmail: <#T##String#>, password: <#T##String#>) { [weak self] authResult, error in
             if let error = error {
                 print("autenticacao nao foi concluida com sucesso \(error)")
             } else {
-                self?.succesResult?()
+                self?.succesResult?(userNameLogin)
             }
         }
     }
