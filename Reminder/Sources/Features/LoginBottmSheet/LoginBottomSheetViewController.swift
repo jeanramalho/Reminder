@@ -66,7 +66,14 @@ class LoginBottomSheetViewController: UIViewController {
     }
     
     private func presentSavedLoginAlert(email: String){
+        let alertController = UIAlertController(title: "Salvar Acesso",
+                                                message: "Deseja se manter conectado?",
+                                                preferredStyle: .alert)
         
+        let saveAction = UIAlertAction(title: "Salvar",
+                                       style: .default) {
+            
+        }
     }
     
     private func setupGesture(){
