@@ -25,7 +25,7 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        decideNavigationFlow()
         setup()
     }
     
@@ -52,7 +52,9 @@ class SplashViewController: UIViewController {
     
     private func decideNavigationFlow() {
         if let user = UserDefaultsManager.loadUser(), user.isUserSaved {
-            
+            flowDelegate?.navigateToHome()
+        } else {
+            showLoginBottomSheet()
         }
     }
     
