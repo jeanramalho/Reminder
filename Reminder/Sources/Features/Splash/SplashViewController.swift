@@ -50,6 +50,12 @@ class SplashViewController: UIViewController {
         ])
     }
     
+    private func decideNavigationFlow() {
+        if let user = UserDefaultsManager.loadUser(), user.isUserSaved {
+            
+        }
+    }
+    
     private func setupGesture(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showLoginBottomSheet))
         self.view.addGestureRecognizer(tapGesture)
