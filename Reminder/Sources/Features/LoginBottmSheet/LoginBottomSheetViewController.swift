@@ -70,7 +70,12 @@ class LoginBottomSheetViewController: UIViewController {
     private func presentErrorAlert(message: String) {
         let alertController = UIAlertController(title: "Erro ao realizar login, verifique seus dados.",
                                                 message: message,
-                                                preferredStyle: <#T##UIAlertController.Style#>)
+                                                preferredStyle: .alert)
+        let retryAction = UIAlertAction(title: "Tentar novamente!",
+                                        style: .default)
+        
+        alertController.addAction(retryAction)
+        self.present(alertController, animated: true)
     }
     
     private func presentSavedLoginAlert(email: String){
