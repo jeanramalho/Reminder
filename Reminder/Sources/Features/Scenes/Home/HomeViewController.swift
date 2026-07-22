@@ -9,8 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let contentView: HomeView?
-    let flowDelegate: HomeFlowDelegate?
+    let contentView: HomeView
+    let flowDelegate: HomeFlowDelegate
     
     init(contentView: HomeView,
          flowDelegate: HomeFlowDelegate) {
@@ -29,20 +29,15 @@ class HomeViewController: UIViewController {
         setup()
     }
     
+    private func setup() {
+        setupConstraints()
+    }
+    
     private func setupBindView() {
         self.view = contentView
     }
     
-    private func setup() {
-        setupHierarchy()
-        setupConstraints()
-    }
-    
-    private func setupHierarchy() {
-        
-    }
-    
     private func setupConstraints() {
-        
+        setupContentViewToBounds(contentView: contentView)
     }
 }
