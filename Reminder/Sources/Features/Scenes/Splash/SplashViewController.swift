@@ -39,15 +39,7 @@ class SplashViewController: UIViewController {
     }
     
     private func setupConstraints(){
-        
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-        ])
+        setupContentViewToBounds(contentView: contentView)
     }
     
     private func decideNavigationFlow() {
