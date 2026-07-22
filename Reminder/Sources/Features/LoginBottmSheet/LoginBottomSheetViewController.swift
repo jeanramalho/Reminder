@@ -62,9 +62,15 @@ class LoginBottomSheetViewController: UIViewController {
             self?.presentSavedLoginAlert(email: userNameLogin)
         }
         
-        viewModel.errorResult = {[weak self] in
-            
+        viewModel.errorResult = {[weak self] errorMessage in
+            self?.presentErrorAlert(message: errorMessage)
         }
+    }
+    
+    private func presentErrorAlert(message: String) {
+        let alertController = UIAlertController(title: "Erro ao realizar login, verifique seus dados.",
+                                                message: message,
+                                                preferredStyle: <#T##UIAlertController.Style#>)
     }
     
     private func presentSavedLoginAlert(email: String){
