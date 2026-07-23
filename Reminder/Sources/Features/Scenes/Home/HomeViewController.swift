@@ -25,16 +25,16 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBindView()
         setup()
     }
     
     private func setup() {
+        setupHierarchy()
         setupConstraints()
     }
     
-    private func setupBindView() {
-        self.view = contentView
+    private func setupHierarchy(){
+        self.view.addSubview(contentView)
     }
     
     private func setupConstraints() {
