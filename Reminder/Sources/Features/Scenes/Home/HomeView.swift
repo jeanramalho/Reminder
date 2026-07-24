@@ -11,7 +11,7 @@ class HomeView: UIView {
     
     let profileBackground: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = Colors.gray600
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -20,7 +20,7 @@ class HomeView: UIView {
         let view = UIView()
         view.layer.cornerRadius = 20
         view.layer.masksToBounds = true
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.gray800
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
