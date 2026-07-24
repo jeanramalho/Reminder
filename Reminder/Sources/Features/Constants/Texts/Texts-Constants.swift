@@ -9,6 +9,7 @@ import UIKit
 
 public struct Typograph {
     
+    static let textBold = UIFont.systemFont(ofSize: 24, weight: .heavy)
     static let heading = UIFont.systemFont(ofSize: 20, weight: .heavy)
     static let subHeading = UIFont.systemFont(ofSize: 16, weight: .heavy)
     static let input = UIFont.systemFont(ofSize: 16, weight: .regular)

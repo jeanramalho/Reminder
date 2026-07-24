@@ -36,8 +36,8 @@ class HomeView: UIView {
     let welcomeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Boas Vindas"
-        label.textColor = .black
+        label.text = "home.welcome.label".localized
+        label.textColor = Colors.gray200
         label.font = Typograph.input
         return label
     }()
@@ -46,7 +46,7 @@ class HomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = Typograph.subHeading
-        label.textColor = .black
+        label.textColor = Colors.gray100
         return label
     }()
     
