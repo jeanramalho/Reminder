@@ -29,8 +29,16 @@ class HomeViewController: UIViewController {
     }
     
     private func setup() {
+        setupNavigationBar()
         setupHierarchy()
         setupConstraints()
+    }
+    
+    private func setupNavigationBar(){
+        let logoutButton = UIBarButtonItem(image: UIImage(named: "log-out-icon"),
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(logoutAction))
     }
     
     private func setupHierarchy(){
@@ -40,4 +48,10 @@ class HomeViewController: UIViewController {
     private func setupConstraints() {
         setupContentViewToBounds(contentView: contentView)
     }
+    
+    @objc
+    private func logoutAction(){
+        
+    }
+   
 }
