@@ -35,11 +35,12 @@ class HomeViewController: UIViewController {
     }
     
     private func setupNavigationBar(){
+        self.navigationController?.navigationBar.isHidden = false
         let logoutButton = UIBarButtonItem(image: UIImage(named: "log-out-icon"),
                                            style: .plain,
                                            target: self,
                                            action: #selector(logoutAction))
-        
+        logoutButton.tintColor = Colors.primaryRedBase
         navigationItem.rightBarButtonItem = logoutButton
     }
     
