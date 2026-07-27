@@ -39,6 +39,8 @@ class HomeViewController: UIViewController {
                                            style: .plain,
                                            target: self,
                                            action: #selector(logoutAction))
+        
+        navigationItem.rightBarButtonItem = logoutButton
     }
     
     private func setupHierarchy(){
