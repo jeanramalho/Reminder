@@ -63,3 +63,16 @@ extension ReminderFlowController: SplashFlowDelegate {
         
     }
 
+//MARK: - Home
+
+extension ReminderFlowController: HomeFlowDelegate {
+    func navigateToRecipes() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func logout() {
+        <#code#>
+    }
+    
+    
+}
