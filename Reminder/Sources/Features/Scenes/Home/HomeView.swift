@@ -29,6 +29,8 @@ class HomeView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "user")
         imageView.layer.cornerRadius = Metrics.huge
         return imageView
     }()
