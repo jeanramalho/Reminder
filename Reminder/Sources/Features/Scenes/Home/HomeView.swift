@@ -63,7 +63,6 @@ class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        backgroundColor = .gray
     }
     
     required init?(coder: NSCoder) {
