@@ -60,3 +60,12 @@ class HomeViewController: UIViewController {
     }
    
 }
+
+extension HomeViewController: HomeViewDelegate {
+    
+    func didTapProfileImage() {
+        <#code#>
+    }
+    
+    
+}

@@ -9,6 +9,8 @@ import UIKit
 
 class HomeView: UIView {
     
+    weak public var delegate: HomeViewDelegate?
+    
     let profileBackground: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.gray600
@@ -28,10 +30,11 @@ class HomeView: UIView {
     let profileImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "user")
-        imageView.layer.cornerRadius = Metrics.huge
+        imageView.layer.cornerRadius = Metrics.medium
         return imageView
     }()
     
@@ -74,6 +77,7 @@ class HomeView: UIView {
     private func setupView(){
         setupHierarchy()
         setupConstraints()
+        setupImageGesture()
     }
     
     private func setupHierarchy() {
@@ -116,5 +120,16 @@ class HomeView: UIView {
             feedbackButton.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
             feedbackButton.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
         ])
+    }
+    
+    private func setupImageGesture() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                          action: #selector(profileImageTapped))
+        profileImage.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc
+    private func profileImageTapped() {
+        
     }
 }
