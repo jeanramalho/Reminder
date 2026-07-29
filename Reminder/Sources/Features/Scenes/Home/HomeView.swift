@@ -130,6 +130,6 @@ class HomeView: UIView {
     
     @objc
     private func profileImageTapped() {
-        
+        delegate?.didTapProfileImage()
     }
 }
