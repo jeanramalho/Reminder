@@ -72,7 +72,7 @@ extension ReminderFlowController: HomeFlowDelegate {
     }
     
     func logout() {
-        <#code#>
+        
     }
     
     

@@ -1,12 +1,11 @@
-/* 
-  Localizable.strings
-  Reminder
 
-  Created by Jean Ramalho on 26/06/26.
+// Localizable.strings
+// Reminder
+
+// Created by Jean Ramalho on 26/06/26.
   
-*/
 
-/* MARK: - LOGIN SCREEN */
+// MARK: - LOGIN SCREEN
 "login.label.title" = "Entre para acessar suas receitas";
 "login.email.placeholder" = "email@exemplo.com";
 "login.password.placeholder" = "senha";
@@ -16,11 +15,11 @@
 
 
 
-/* MARK: - HOME SCREEN */
+// MARK: - HOME SCREEN
 "home.welcome.label" = "Boas Vindas";
-"home.feedback.button" = "Avaliar"
+"home.feedback.button" = "Avaliar";
 
 
-/* MARK: - RECEIPTS SCREEN */
+// MARK: - RECEIPTS SCREEN
 
-/* MARK: - NEWRECEIPT SCREEN */
+// MARK: - NEWRECEIPT SCREEN
