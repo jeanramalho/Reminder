@@ -35,7 +35,6 @@ extension ReminderFlowController: LoginBottomSheetFlowDelegate {
     func navigateToHome() {
         self.navigationController?.dismiss(animated: true)
         let viewController = viewControllerFactory.makeHomeViewController(flowDelegate: self)
-        
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -55,7 +54,7 @@ extension ReminderFlowController: SplashFlowDelegate {
     
     func splashNavigateToHome() {
         self.navigationController?.dismiss(animated: true)
-        let viewController = UIViewController()
+        let viewController = viewControllerFactory.makeHomeViewController(flowDelegate: self)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
