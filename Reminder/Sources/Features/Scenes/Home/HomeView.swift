@@ -52,6 +52,7 @@ class HomeView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Insira seu nome"
         textField.font = Typograph.heading
+        textField.returnKeyType = .done
         textField.textColor = Colors.gray100
         return textField
     }()
@@ -130,6 +131,7 @@ class HomeView: UIView {
         nameTextField.addTarget(self,
                                 action: #selector(nameTextFieldDidEndEditing),
                                 for: .editingDidEnd)
+        nameTextField.delegate = self
     }
     
     private func setupImageGesture() {
@@ -145,7 +147,16 @@ class HomeView: UIView {
     
     @objc
     private func nameTextFieldDidEndEditing() {
-        let userName = nameTextField.text ?? "" 
+        let userName = nameTextField.text ?? ""
         UserDefaultsManager.saveUserName(name: userName)
+    }
+}
+
+extension HomeView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        let userName = nameTextField.text ?? ""
+        UserDefaultsManager.saveUserName(name: userName)
+        return true
     }
 }

@@ -34,7 +34,7 @@ class UserDefaultsManager {
         return nil
     }
     
-    static func loadUser() -> String? {
+    static func loadUserName() -> String? {
         return UserDefaults.standard.string(forKey: userNameKey)
     }
     
