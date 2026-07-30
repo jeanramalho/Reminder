@@ -75,6 +75,8 @@ class HomeView: UIView {
     }
     
     private func setupView(){
+        backgroundColor = Colors.gray600
+        
         setupHierarchy()
         setupConstraints()
         setupImageGesture()
