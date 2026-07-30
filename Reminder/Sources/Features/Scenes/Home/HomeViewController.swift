@@ -11,11 +11,13 @@ class HomeViewController: UIViewController {
     
     let contentView: HomeView
     let flowDelegate: HomeFlowDelegate
+    let viewModel: HomeViewModel
     
     init(contentView: HomeView,
          flowDelegate: HomeFlowDelegate) {
         self.contentView = contentView
         self.flowDelegate = flowDelegate
+        self.viewModel = HomeViewModel()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,6 +34,7 @@ class HomeViewController: UIViewController {
         
         contentView.delegate = self
         
+        checkForExistingData()
         setupNavigationBar()
         setupHierarchy()
         setupConstraints()
@@ -54,6 +57,12 @@ class HomeViewController: UIViewController {
     
     private func setupConstraints() {
         setupContentViewToBounds(contentView: contentView)
+    }
+    
+    private func checkForExistingData() {
+        if let user = UserDefaultsManager.loadUser() {
+            contentView.nameTextField.text = UserDefaultsManager.loadUserName()
+        }
     }
     
     @objc
