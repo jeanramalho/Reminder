@@ -5,10 +5,12 @@
 //  Created by Jean Ramalho on 17/07/26.
 //
 import Foundation
+import UIKit
 
 class UserDefaultsManager {
     private static let userKey = "userKey"
     private static let userNameKey = "userName"
+    private static let profileImageKey = "profileImageKey"
 
     
 // MARK: -  Save methods
@@ -28,6 +30,9 @@ class UserDefaultsManager {
     // Converte e salva imagem para um jpgData
     static func saveProfileImage(image: UIImage) {
         
+        if let imageData = image.jpegData(compressionQuality: 1.0) {
+            UserDefaults.standard.set(imageData, forKey: profileImageKey)
+        }
     }
 
 // MARK: - Load methods
