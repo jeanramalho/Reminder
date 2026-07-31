@@ -33,7 +33,6 @@ class HomeView: UIView {
         imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "user")
         imageView.layer.cornerRadius = Metrics.medium
         return imageView
     }()
