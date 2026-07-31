@@ -9,7 +9,9 @@ import Foundation
 class UserDefaultsManager {
     private static let userKey = "userKey"
     private static let userNameKey = "userName"
+
     
+// MARK: -  Save methods
     static func saveUser(user: User) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(user) {
@@ -22,6 +24,13 @@ class UserDefaultsManager {
         UserDefaults.standard.set(name, forKey: userNameKey)
         UserDefaults.standard.synchronize()
     }
+    
+    // Converte e salva imagem para um jpgData
+    static func saveProfileImage(image: UIImage) {
+        
+    }
+
+// MARK: - Load methods
     
     static func loadUser() -> User? {
         if let userData = UserDefaults.standard.data(forKey: userKey) {
@@ -37,6 +46,8 @@ class UserDefaultsManager {
     static func loadUserName() -> String? {
         return UserDefaults.standard.string(forKey: userNameKey)
     }
+    
+// MARK: - Delete methods
     
     static func removeUser() {
         UserDefaults.standard.removeObject(forKey: userKey)
