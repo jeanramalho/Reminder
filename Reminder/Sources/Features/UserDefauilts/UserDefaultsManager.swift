@@ -52,6 +52,15 @@ class UserDefaultsManager {
         return UserDefaults.standard.string(forKey: userNameKey)
     }
     
+    static func loadProfileImage() -> UIImage? {
+        
+        if let imageData = UserDefaults.standard.data(forKey: profileImageKey) {
+            return UIImage(data: imageData)
+        }
+        
+        return UIImage(named: "user")
+    }
+    
 // MARK: - Delete methods
     
     static func removeUser() {
