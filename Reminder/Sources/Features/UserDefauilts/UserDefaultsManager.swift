@@ -65,6 +65,8 @@ class UserDefaultsManager {
     
     static func removeUser() {
         UserDefaults.standard.removeObject(forKey: userKey)
+        UserDefaults.standard.removeObject(forKey: userNameKey)
+        UserDefaults.standard.removeObject(forKey: profileImageKey)
         UserDefaults.standard.synchronize()
     }
     
