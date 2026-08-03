@@ -42,7 +42,7 @@ class ButtonHomeView: UIView {
         return label
     }()
     
-    private let arroeImageView = {
+    private let arrowImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "chevron.right")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,6 +54,11 @@ class ButtonHomeView: UIView {
     init(icon: UIImage?, title: String, description: String) {
         super.init(frame: .zero)
         
+        iconImageView.image = icon
+        titleLabel.text = title
+        descriptionLabel.text = description
+        
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -64,6 +69,40 @@ class ButtonHomeView: UIView {
         backgroundColor = Colors.gray700
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setupUI() {
+        
+        setupHierarchy()
+        setupConstraints()
+    }
+    
+    private func setupHierarchy() {
+        
+        addSubview(iconView)
+        iconView.addSubview(iconImageView)
+        
+        addSubview(titleLabel)
+        addSubview(descriptionLabel)
+        addSubview(arrowImageView)
+    }
+    
+    private func setupConstraints() {
+        
+        NSLayoutConstraint.activate([
+            
+            iconView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.medium),
+            iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            iconView.widthAnchor.constraint(equalToConstant: 80),
+            iconView.heightAnchor.constraint(equalToConstant: 80),
+            
+            iconImageView.centerXAnchor.constraint(equalTo: iconView.centerXAnchor),
+            iconImageView.centerYAnchor.constraint(equalTo: iconView.centerYAnchor),
+            iconImageView.widthAnchor.constraint(equalToConstant: 48),
+            iconImageView.heightAnchor.constraint(equalToConstant: 48),
+            
+            
+        ])
     }
 }
 
