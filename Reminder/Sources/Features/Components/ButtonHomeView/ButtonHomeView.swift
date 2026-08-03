@@ -51,6 +51,19 @@ class ButtonHomeView: UIView {
         return imageView
     }()
     
+    init(icon: UIImage?, title: String, description: String) {
+        super.init(frame: .zero)
+        
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupSelfClass() {
+        backgroundColor = Colors.gray700
+        layer.cornerRadius = 10
+        translatesAutoresizingMaskIntoConstraints = false
+    }
 }
 
