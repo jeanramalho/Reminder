@@ -50,5 +50,7 @@ class ButtonHomeView: UIView {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
+    
+    
 }
 
