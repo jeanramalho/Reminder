@@ -64,6 +64,15 @@ class HomeView: UIView {
         return button
     }()
     
+    let newPrescriptionButton: ButtonHomeView = {
+        let button = ButtonHomeView(icon: UIImage(named: "pills"),
+                                    title: "Minhas Receitas",
+                                    description: "Acompanhe os medicamenteos e gerencie lembretes.")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    
     let feedbackButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
