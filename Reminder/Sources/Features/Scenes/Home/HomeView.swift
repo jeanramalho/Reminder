@@ -66,8 +66,8 @@ class HomeView: UIView {
     
     let newPrescriptionButton: ButtonHomeView = {
         let button = ButtonHomeView(icon: UIImage(named: "pills"),
-                                    title: "Minhas Receitas",
-                                    description: "Acompanhe os medicamenteos e gerencie lembretes.")
+                                    title: "Nova Receita",
+                                    description: "Cadastre novos lembretes de receitas.")
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -111,6 +111,7 @@ class HomeView: UIView {
         addSubview(contentBackground)
         contentBackground.addSubview(feedbackButton)
         contentBackground.addSubview(myPrescriptionButtons)
+        contentBackground.addSubview(newPrescriptionButton)
     }
     
     private func setupConstraints() {
@@ -142,11 +143,17 @@ class HomeView: UIView {
             myPrescriptionButtons.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
             myPrescriptionButtons.heightAnchor.constraint(equalToConstant: 112),
             
+            newPrescriptionButton.topAnchor.constraint(equalTo: myPrescriptionButtons.bottomAnchor, constant: Metrics.huge),
+            newPrescriptionButton.leadingAnchor.constraint(equalTo: myPrescriptionButtons.leadingAnchor),
+            newPrescriptionButton.trailingAnchor.constraint(equalTo: myPrescriptionButtons.trailingAnchor),
+            newPrescriptionButton.heightAnchor.constraint(equalToConstant: 112),
+            
             
             feedbackButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
             feedbackButton.bottomAnchor.constraint(equalTo: contentBackground.bottomAnchor, constant: -Metrics.medium),
             feedbackButton.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
             feedbackButton.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
+
         ])
     }
     

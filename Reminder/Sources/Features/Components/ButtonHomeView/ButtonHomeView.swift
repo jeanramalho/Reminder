@@ -57,7 +57,7 @@ class ButtonHomeView: UIView {
         iconImageView.image = icon
         titleLabel.text = title
         descriptionLabel.text = description
-        
+        setupSelfClass()
         setupUI()
     }
     
@@ -105,7 +105,7 @@ class ButtonHomeView: UIView {
             titleLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: Metrics.medier),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.medier),
             
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.medium),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.tiny),
             descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.medier),
             descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -Metrics.medier),
