@@ -60,6 +60,7 @@ class HomeView: UIView {
         let button = ButtonHomeView(icon: UIImage(named: "Paper"),
                                     title: "Minhas Receitas",
                                     description: "Acompanhe os medicamenteos e gerencie lembretes.")
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -126,6 +127,12 @@ class HomeView: UIView {
             contentBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentBackground.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            myPrescriptionButtons.topAnchor.constraint(equalTo: contentBackground.topAnchor, constant: Metrics.huge),
+            myPrescriptionButtons.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
+            myPrescriptionButtons.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
+            myPrescriptionButtons.heightAnchor.constraint(equalToConstant: 112),
+            
             
             feedbackButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
             feedbackButton.bottomAnchor.constraint(equalTo: contentBackground.bottomAnchor, constant: -Metrics.medium),
