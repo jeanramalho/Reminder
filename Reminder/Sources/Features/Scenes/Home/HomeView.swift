@@ -56,6 +56,13 @@ class HomeView: UIView {
         return textField
     }()
     
+    let myPrescriptionButtons: ButtonHomeView = {
+        let button = ButtonHomeView(icon: UIImage(named: "Paper"),
+                                    title: "Minhas Receitas",
+                                    description: "Acompanhe os medicamenteos e gerencie lembretes.")
+        return button
+    }()
+    
     let feedbackButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
