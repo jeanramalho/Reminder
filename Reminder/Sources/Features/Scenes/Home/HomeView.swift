@@ -100,6 +100,7 @@ class HomeView: UIView {
         
         addSubview(contentBackground)
         contentBackground.addSubview(feedbackButton)
+        contentBackground.addSubview(myPrescriptionButtons)
     }
     
     private func setupConstraints() {
