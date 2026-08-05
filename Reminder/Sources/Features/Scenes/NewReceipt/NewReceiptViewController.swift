@@ -10,4 +10,13 @@ import UIKit
 
 class NewReceiptViewController: UIViewController {
     
+    private let newReceiptView: NewReceiptView?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+        setupActions()
+    }
+    
+    
 }

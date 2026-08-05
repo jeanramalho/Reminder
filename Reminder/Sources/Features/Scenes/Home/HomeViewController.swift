@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
     private func setup() {
         
         contentView.delegate = self
+        view.backgroundColor = Colors.gray600
         
         checkForExistingData()
         setupNavigationBar()
