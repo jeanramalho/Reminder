@@ -10,7 +10,7 @@ import UIKit
 
 class NewReceiptViewController: UIViewController {
     
-    private let newReceiptView: NewReceiptView?
+    private let contentView: NewReceiptView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,5 +18,18 @@ class NewReceiptViewController: UIViewController {
         setupActions()
     }
     
+    private func setupView() {
+        view.backgroundColor = Colors.gray800
+        
+        setupHierarchy()
+        setupConstraints()
+    }
     
+    private func setupHierarchy() {
+        view.addSubview(contentView)
+    }
+    
+    private func setupConstraints() {
+        setupContentViewToBounds(contentView: contentView)
+    }
 }
