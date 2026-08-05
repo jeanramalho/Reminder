@@ -15,7 +15,7 @@ class NewReceiptViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupActions()
+    //    setupActions()
     }
     
     private func setupView() {
