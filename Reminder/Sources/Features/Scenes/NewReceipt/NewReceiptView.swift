@@ -17,6 +17,36 @@ class NewReceiptView: UIView {
         return button
     }()
     
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = Typograph.heading
+        label.textColor =  Colors.primaryRedBase
+        label.text = "Nova Receita"
+        return label
+    }()
+    
+    let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = Typograph.body
+        label.textColor = Colors.gray200
+        label.text = "Adicione a sua prescriação médica para receber lembretes de quando tomar seu medicamento"
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    let addButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("+ Adicionar", for: .normal)
+        button.titleLabel?.font = Typograph.subHeading
+        button.backgroundColor = Colors.primaryRedBase
+        button.layer.cornerRadius = 12
+        button.setTitleColor(Colors.gray800, for: .normal)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -34,14 +64,29 @@ class NewReceiptView: UIView {
     
     private func setupHierarchy() {
         addSubview(backButton)
+        addSubview(titleLabel)
+        addSubview(descriptionLabel)
+        addSubview(addButton)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: topAnchor, constant: Metrics.small),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metrics.small),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             backButton.heightAnchor.constraint(equalToConstant: 24),
             backButton.widthAnchor.constraint(equalToConstant: 24),
+            
+            titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: Metrics.small),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.small),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            
+            addButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
+            addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            addButton.heightAnchor.constraint(equalToConstant: 56),
+            addButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Metrics.high),
         ])
     }
 }
