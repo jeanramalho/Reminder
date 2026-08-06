@@ -36,6 +36,11 @@ class NewReceiptView: UIView {
         return label
     }()
     
+    let remedyinputy = Input(title: "Remédio", placeholder: "Nome do Medicamento")
+    let timeInput =  Input(title: "Horário", placeholder: "12:00")
+    let recurrenceInput = Input(title: "Recorrência", placeholder: "Selecione")
+    // let takeNowCheckBox =
+    
     let addButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +71,9 @@ class NewReceiptView: UIView {
         addSubview(backButton)
         addSubview(titleLabel)
         addSubview(descriptionLabel)
+        addSubview(remedyinputy)
+        addSubview(timeInput)
+        addSubview(recurrenceInput)
         addSubview(addButton)
     }
     
@@ -82,6 +90,18 @@ class NewReceiptView: UIView {
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.small),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            
+            remedyinputy.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: Metrics.medium),
+            remedyinputy.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
+            remedyinputy.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            
+            timeInput.topAnchor.constraint(equalTo: remedyinputy.bottomAnchor, constant: Metrics.medium),
+            timeInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
+            timeInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            
+            recurrenceInput.topAnchor.constraint(equalTo: timeInput.bottomAnchor, constant: Metrics.medium),
+            recurrenceInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
+            recurrenceInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
             
             addButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
