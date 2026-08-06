@@ -59,11 +59,25 @@ public class Input: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: 85),
+            
+            titleLabel.topAnchor.constraint(equalTo: topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.small),
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor),
+            textField.heightAnchor.constraint(equalToConstant: 56),
             
         ])
     }
     
     private func configurePlaceHolder(placeholder: String) {
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: Colors.gray200])
+    }
+    
+    func getText() -> String {
+        return textField.text ?? ""
     }
 }
