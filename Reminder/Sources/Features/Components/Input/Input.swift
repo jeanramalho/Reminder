@@ -29,4 +29,37 @@ public class Input: UIView {
         textField.layer.cornerRadius = Metrics.tiny
         return textField
     }()
+    
+    init(title: String, placeholder: String){
+        super.init(frame: .zero)
+        setupView()
+        
+        titleLabel.text = title
+        textField.placeholder =  placeholder
+        configurePlaceHolder(placeholder: placeholder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupView() {
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        setupHierarchy()
+        setupConstraints()
+    }
+    
+    private func setupHierarchy() {
+        
+    }
+    
+    private func setupConstraints() {
+        
+    }
+    
+    private func configurePlaceHolder(placeholder: String) {
+        textField.attributedPlaceholder = 
+    }
 }
