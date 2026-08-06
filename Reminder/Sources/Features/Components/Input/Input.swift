@@ -15,5 +15,18 @@ public class Input: UIView {
         label.font = Typograph.label
         label.textColor = Colors.gray100
         return label
-    }
+    }()
+    
+    private let textField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.font = Typograph.input
+        textField.textColor = Colors.gray100
+        textField.borderStyle = .roundedRect
+        textField.backgroundColor = Colors.gray800
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = Colors.gray400.cgColor
+        textField.layer.cornerRadius = Metrics.tiny
+        return textField
+    }()
 }
