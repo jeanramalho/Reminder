@@ -60,6 +60,6 @@ public class Input: UIView {
     }
     
     private func configurePlaceHolder(placeholder: String) {
-        textField.attributedPlaceholder = 
+        textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: Colors.gray200])
     }
 }
