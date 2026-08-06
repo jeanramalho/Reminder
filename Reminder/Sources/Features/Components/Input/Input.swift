@@ -53,10 +53,14 @@ public class Input: UIView {
     
     private func setupHierarchy() {
         
+        addSubview(titleLabel)
+        addSubview(textField)
     }
     
     private func setupConstraints() {
-        
+        NSLayoutConstraint.activate([
+            
+        ])
     }
     
     private func configurePlaceHolder(placeholder: String) {
