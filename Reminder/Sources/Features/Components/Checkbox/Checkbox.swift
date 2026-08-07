@@ -16,4 +16,13 @@ class Checkbox: UIView {
         label.textColor = Colors.gray200
         return label
     }()
+    
+    private let checkbox: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "square"), for: .normal)
+        button.tintColor = Colors.gray400
+        return button
+    }()
+    
 }
