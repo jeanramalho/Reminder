@@ -28,6 +28,8 @@ class Checkbox: UIView {
     init(title: String) {
         super.init(frame: .zero)
         
+        titleLabel.text = title
+        
         setupView()
     }
     
@@ -37,17 +39,29 @@ class Checkbox: UIView {
     
     private func setupView() {
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         setupHierarchy()
         setupConstraints()
     }
     
     private func setupHierarchy() {
         
+        addSubview(checkbox)
+        addSubview(titleLabel)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             
+            checkbox.leadingAnchor.constraint(equalTo: leadingAnchor),
+            checkbox.centerYAnchor.constraint(equalTo: centerYAnchor),
+            checkbox.widthAnchor.constraint(equalToConstant: 24),
+            checkbox.heightAnchor.constraint(equalToConstant: 24),
+            
+            titleLabel.leadingAnchor.constraint(equalTo: checkbox.trailingAnchor, constant: Metrics.small),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
     
