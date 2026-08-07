@@ -39,7 +39,7 @@ class NewReceiptView: UIView {
     let remedyinputy = Input(title: "Remédio", placeholder: "Nome do Medicamento")
     let timeInput =  Input(title: "Horário", placeholder: "12:00")
     let recurrenceInput = Input(title: "Recorrência", placeholder: "Selecione")
-    // let takeNowCheckBox =
+    let takeNowCheckBox = Checkbox(title: "Tomar agora")
     
     let addButton: UIButton = {
         let button = UIButton()
@@ -74,6 +74,7 @@ class NewReceiptView: UIView {
         addSubview(remedyinputy)
         addSubview(timeInput)
         addSubview(recurrenceInput)
+        addSubview(takeNowCheckBox)
         addSubview(addButton)
     }
     
@@ -102,6 +103,10 @@ class NewReceiptView: UIView {
             recurrenceInput.topAnchor.constraint(equalTo: timeInput.bottomAnchor, constant: Metrics.medium),
             recurrenceInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             recurrenceInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            
+            takeNowCheckBox.topAnchor.constraint(equalTo: recurrenceInput.bottomAnchor, constant: Metrics.medium),
+            takeNowCheckBox.leadingAnchor.constraint(equalTo: recurrenceInput.leadingAnchor),
+            takeNowCheckBox.trailingAnchor.constraint(equalTo: recurrenceInput.trailingAnchor),
             
             addButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
