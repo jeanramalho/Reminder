@@ -25,4 +25,30 @@ class Checkbox: UIView {
         return button
     }()
     
+    init(title: String) {
+        super.init(frame: .zero)
+        
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupView() {
+        
+        setupHierarchy()
+        setupConstraints()
+    }
+    
+    private func setupHierarchy() {
+        
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            
+        ])
+    }
+    
 }
