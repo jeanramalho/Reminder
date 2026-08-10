@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
         contentView.delegate = self
         view.backgroundColor = Colors.gray600
         
+        setupActionForNewRecipe()
         checkForExistingData()
         setupNavigationBar()
         setupHierarchy()
@@ -68,6 +69,10 @@ class HomeViewController: UIViewController {
         if let savedImage = UserDefaultsManager.loadProfileImage() {
             contentView.profileImage.image = savedImage
         }
+    }
+    
+    private func setupActionForNewRecipe() {
+        
     }
     
     @objc
