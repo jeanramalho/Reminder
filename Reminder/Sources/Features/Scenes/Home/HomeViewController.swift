@@ -72,7 +72,10 @@ class HomeViewController: UIViewController {
     }
     
     private func setupActionForNewRecipe() {
-        
+        contentView.newPrescriptionButton.tapAction = {[weak self] in
+            self?.didTapNewPrescriptionButton()
+            
+        }
     }
     
     @objc
@@ -89,7 +92,9 @@ extension HomeViewController: HomeViewDelegate {
         selectProfileImage()
     }
     
-    
+    func didTapNewPrescriptionButton() {
+        flowDelegate.navigateToRecipes()
+    }
 }
 
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
