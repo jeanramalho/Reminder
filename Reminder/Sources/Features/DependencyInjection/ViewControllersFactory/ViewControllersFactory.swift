@@ -30,4 +30,10 @@ final class ViewControllersFactory: ViewControllersFactoryProtocol {
         
         return viewController
     }
+    
+    func makeRecipesViewController() -> NewReceiptViewController {
+        let contentView = NewReceiptView()
+        let viewController = NewReceiptViewController(contentView: contentView)
+        return viewController
+    }
 }
