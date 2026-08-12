@@ -60,8 +60,17 @@ class DBHelper {
             sqlite3_bind_text(statement, 1, (remedy as NSString).utf8String, -1, nil)
             sqlite3_bind_text(statement, 2, (time as NSString).utf8String, -1, nil)
             sqlite3_bind_text(statement, 3, (recurrence as NSString).utf8String, -1, nil)
-            sqlite3_bind_text(statement, 4, (takeNow as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 4, (takeNow ? 1 :0)
+            
+            if sqlite_step(statement) == SQLITE_DONE {
+                print("Receita inserida com sucesso!")
+            } else {
+                print("Falha ao inserir receita na tabela")
+            }
+        } else {
+            print("INSERT statement falhou")
         }
+        sqlite3_finalize(statement)
     }
     
 }
