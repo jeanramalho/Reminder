@@ -51,5 +51,9 @@ class DBHelper {
         sqlite3_finalize(statement)
     }
     
+    func insertReceipt(remedy: String, time: String, recurrence: String, takeNow: Bool) {
+        
+        let insertQuery = "INSERT INTO Receipts (remedy, time, recurrence, takeNow) VALUES (?, ?, ?, ?);"
+    }
     
 }
