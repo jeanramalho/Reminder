@@ -33,7 +33,8 @@ final class ViewControllersFactory: ViewControllersFactoryProtocol {
     
     func makeRecipesViewController() -> NewReceiptViewController {
         let contentView = NewReceiptView()
-        let viewController = NewReceiptViewController(contentView: contentView)
+        let viewModel = NewReceiptViewModel()
+        let viewController = NewReceiptViewController(contentView: contentView, viewModel: viewModel)
         return viewController
     }
 }

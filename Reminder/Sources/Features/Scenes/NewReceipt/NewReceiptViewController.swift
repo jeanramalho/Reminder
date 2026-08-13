@@ -11,9 +11,11 @@ import UIKit
 class NewReceiptViewController: UIViewController {
     
     private let contentView: NewReceiptView
+    private let viewModel: NewReceiptViewModel
     
-    init(contentView: NewReceiptView) {
+    init(contentView: NewReceiptView, viewModel: NewReceiptViewModel) {
         self.contentView = contentView
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,10 +46,19 @@ class NewReceiptViewController: UIViewController {
     
     private func setupActions() {
         contentView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        contentView.addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
     }
     
     @objc
     private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
+    private func addButtonTapped() {
+        let remedy = contentView.remedyinputy.getText()
+        let time = contentView.timeInput.getText()
+        let recurrence = contentView.recurrenceInput.getText()
+        let takeNow = contentView.takeNowCheckBox
     }
 }
