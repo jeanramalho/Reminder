@@ -7,5 +7,7 @@
 import Foundation
 
 class NewReceiptViewModel {
-    
+    func addReceipt(remedy: String, time: String, recurrence: String, takeNow: Bool) {
+        
+    }
 }
