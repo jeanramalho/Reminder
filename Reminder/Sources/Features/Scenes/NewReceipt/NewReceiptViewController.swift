@@ -59,6 +59,13 @@ class NewReceiptViewController: UIViewController {
         let remedy = contentView.remedyinputy.getText()
         let time = contentView.timeInput.getText()
         let recurrence = contentView.recurrenceInput.getText()
-        let takeNow = contentView.takeNowCheckBox
+        let takeNow = false
+        
+        viewModel.addReceipt(remedy: remedy,
+                             time: time,
+                             recurrence: recurrence,
+                             takeNow: takeNow)
+        
+        print("\(remedy) Adicionado com suceeso!")
     }
 }
