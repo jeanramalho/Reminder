@@ -9,7 +9,7 @@ import UIKit
 
 public class Input: UIView {
     
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = Typograph.label
@@ -17,7 +17,7 @@ public class Input: UIView {
         return label
     }()
     
-    private let textField = {
+    let textField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font = Typograph.input

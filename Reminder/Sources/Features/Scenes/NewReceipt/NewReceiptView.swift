@@ -134,4 +134,8 @@ class NewReceiptView: UIView {
         timeInput.textField.inputAccessoryView = toolbar
     }
     
+    @objc
+    private func didSelectTime() {
+        
+    }
 }
