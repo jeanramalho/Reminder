@@ -41,6 +41,14 @@ class NewReceiptView: UIView {
     let recurrenceInput = Input(title: "Recorrência", placeholder: "Selecione")
     let takeNowCheckBox = Checkbox(title: "Tomar agora")
     
+    let timePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.datePickerMode = .time
+        picker.preferredDatePickerStyle = .wheels
+        return picker
+    }()
+    
     let addButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
