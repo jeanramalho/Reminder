@@ -49,6 +49,22 @@ class NewReceiptView: UIView {
         return picker
     }()
     
+    let recurrencePicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        return picker
+    }()
+    
+    let recurrenceOpitons = [
+        "De hora em hora",
+        "2 em 2 horas",
+        "4 em 4 horas",
+        "6 em 6 horas",
+        "8 em 8 horas",
+        "12 em 12 horas",
+        "1 ao dia"
+    ]
+    
     let addButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -74,6 +90,7 @@ class NewReceiptView: UIView {
         setupHierarchy()
         setupConstraints()
         setupTimeInput()
+        setupRecurrenceInput()
     }
     
     private func setupHierarchy() {
@@ -135,11 +152,46 @@ class NewReceiptView: UIView {
         timeInput.textField.inputAccessoryView = toolbar
     }
     
+    private func setupRecurrenceInput() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didSelectRecurrence))
+        toolbar.setItems([doneButton], animated: true)
+        
+        recurrenceInput.textField.inputView = timePicker
+        recurrenceInput.textField.inputAccessoryView = toolbar
+        
+        recurrencePicker.delegate = self
+        recurrencePicker.dataSource = self
+    }
+    
     @objc
     private func didSelectTime() {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
         timeInput.textField.text = formatter.string(from: timePicker.date)
         timeInput.textField.resignFirstResponder()
+    }
+    
+    @objc
+    private func didSelectRecurrence() {
+        let selectedRow = recurrencePicker.selectedRow(inComponent: 0)
+        recurrenceInput.textField.text = recurrenceOpitons[selectedRow]
+        recurrenceInput.textField.resignFirstResponder()
+    }
+}
+
+extension NewReceiptView: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return recurrenceOpitons.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return recurrenceOpitons[row]
     }
 }
