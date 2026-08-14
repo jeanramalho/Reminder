@@ -122,4 +122,16 @@ class NewReceiptView: UIView {
             addButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Metrics.high),
         ])
     }
+    
+    private func setupTimeInput() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didSelectTime))
+        toolbar.setItems([doneButton], animated: true)
+        
+        timeInput.textField.inputView = timePicker
+        timeInput.textField.inputAccessoryView = toolbar
+    }
+    
 }
