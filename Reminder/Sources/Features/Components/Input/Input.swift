@@ -9,7 +9,7 @@ import UIKit
 
 public class Input: UIView {
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = Typograph.label

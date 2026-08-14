@@ -73,6 +73,7 @@ class NewReceiptView: UIView {
         
         setupHierarchy()
         setupConstraints()
+        setupTimeInput()
     }
     
     private func setupHierarchy() {
