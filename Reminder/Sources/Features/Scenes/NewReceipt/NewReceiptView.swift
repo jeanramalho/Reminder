@@ -137,6 +137,9 @@ class NewReceiptView: UIView {
     
     @objc
     private func didSelectTime() {
-        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        timeInput.textField.text = formatter.string(from: timePicker.date)
+        timeInput.textField.resignFirstResponder()
     }
 }
