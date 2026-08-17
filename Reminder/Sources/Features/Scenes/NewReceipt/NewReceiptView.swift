@@ -166,6 +166,10 @@ class NewReceiptView: UIView {
         recurrencePicker.dataSource = self
     }
     
+    private func setupObservers() {
+        remedyinput.textField.addTarget(self, action: #selector(inputDidChange), for: .editingChanged)
+    }
+    
     private func validateInputs() {
         let isRemedyFilled = !(remedyinput.textField.text ?? "").isEmpty
         let isTimeFilled = !(timeInput.textField.text ?? "").isEmpty
@@ -187,6 +191,11 @@ class NewReceiptView: UIView {
         let selectedRow = recurrencePicker.selectedRow(inComponent: 0)
         recurrenceInput.textField.text = recurrenceOpitons[selectedRow]
         recurrenceInput.textField.resignFirstResponder()
+    }
+    
+    @objc
+    private func inputDidChange() {
+        
     }
 }
 
