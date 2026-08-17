@@ -170,6 +170,8 @@ class NewReceiptView: UIView {
         let isRemedyFilled = !(remedyinput.textField.text ?? "").isEmpty
         let isTimeFilled = !(timeInput.textField.text ?? "").isEmpty
         let isRecurrenceFilled = !(recurrenceInput.textField.text ?? "").isEmpty
+        
+        addButton.isEnabled = isRemedyFilled && isTimeFilled && isRecurrenceFilled
     }
     
     @objc
