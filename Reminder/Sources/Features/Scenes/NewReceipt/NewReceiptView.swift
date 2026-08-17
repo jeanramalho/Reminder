@@ -36,7 +36,7 @@ class NewReceiptView: UIView {
         return label
     }()
     
-    let remedyinputy = Input(title: "Remédio", placeholder: "Nome do Medicamento")
+    let remedyinput = Input(title: "Remédio", placeholder: "Nome do Medicamento")
     let timeInput =  Input(title: "Horário", placeholder: "12:00")
     let recurrenceInput = Input(title: "Recorrência", placeholder: "Selecione")
     let takeNowCheckBox = Checkbox(title: "Tomar agora")
@@ -97,7 +97,7 @@ class NewReceiptView: UIView {
         addSubview(backButton)
         addSubview(titleLabel)
         addSubview(descriptionLabel)
-        addSubview(remedyinputy)
+        addSubview(remedyinput)
         addSubview(timeInput)
         addSubview(recurrenceInput)
         addSubview(takeNowCheckBox)
@@ -118,11 +118,11 @@ class NewReceiptView: UIView {
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
             
-            remedyinputy.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: Metrics.medium),
-            remedyinputy.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
-            remedyinputy.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            remedyinput.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: Metrics.medium),
+            remedyinput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
+            remedyinput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
             
-            timeInput.topAnchor.constraint(equalTo: remedyinputy.bottomAnchor, constant: Metrics.medium),
+            timeInput.topAnchor.constraint(equalTo: remedyinput.bottomAnchor, constant: Metrics.medium),
             timeInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             timeInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
             
@@ -164,6 +164,12 @@ class NewReceiptView: UIView {
         
         recurrencePicker.delegate = self
         recurrencePicker.dataSource = self
+    }
+    
+    private func validateInputs() {
+        let isRemedyFilled = !(remedyinput.textField.text ?? "").isEmpty
+        let isTimeFilled = !(timeInput.textField.text ?? "").isEmpty
+        let isRecurrenceFilled = !(recurrenceInput.textField.text ?? "").isEmpty
     }
     
     @objc

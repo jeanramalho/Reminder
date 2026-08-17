@@ -56,7 +56,7 @@ class NewReceiptViewController: UIViewController {
     
     @objc
     private func addButtonTapped() {
-        let remedy = contentView.remedyinputy.getText()
+        let remedy = contentView.remedyinput.getText()
         let time = contentView.timeInput.getText()
         let recurrence = contentView.recurrenceInput.getText()
         let takeNow = false
