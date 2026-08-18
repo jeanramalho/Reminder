@@ -27,6 +27,21 @@ class MyReceiptsView: UIView {
     }
     
     private func setupView() {
+       
+        setupHierarchy()
+        setupConstraints()
+    }
+    
+    private func setupHierarchy() {
         
+        addSubview(headerBackground)
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            headerBackground.topAnchor.constraint(equalTo: topAnchor),
+            headerBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
+            headerBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
+        ])
     }
 }
