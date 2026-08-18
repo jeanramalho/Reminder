@@ -17,6 +17,15 @@ class MyReceiptsView: UIView {
         return view
     }()
     
+    let backButton: UIButton = {
+        let button =  UIButton()
+        let image = UIImage(named: "arrow-left")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(image, for: .normal)
+        button.tintColor = Colors.primaryBlueBase
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -35,6 +44,7 @@ class MyReceiptsView: UIView {
     private func setupHierarchy() {
         
         addSubview(headerBackground)
+        headerBackground.addSubview(backButton)
     }
     
     private func setupConstraints() {
@@ -42,6 +52,13 @@ class MyReceiptsView: UIView {
             headerBackground.topAnchor.constraint(equalTo: topAnchor),
             headerBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
             headerBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
+            headerBackground.heightAnchor.constraint(equalToConstant: Metrics.backgroundProfileSize),
+            
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -Metrics.small),
+            backButton.leadingAnchor.constraint(equalTo: headerBackground.leadingAnchor, constant: Metrics.medium),
+            backButton.heightAnchor.constraint(equalToConstant: 24),
+            backButton.widthAnchor.constraint(equalToConstant: 24),
+            
         ])
     }
 }
