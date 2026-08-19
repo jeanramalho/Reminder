@@ -23,6 +23,7 @@ class MyReceiptsView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(image, for: .normal)
         button.tintColor = Colors.primaryBlueBase
+        button.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
         return button
     }()
     
@@ -32,6 +33,7 @@ class MyReceiptsView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(image, for: .normal)
         button.tintColor = Colors.primaryBlueBase
+        button.addTarget(self, action: #selector(didTapAddButton), for: .touchUpInside)
         return button
     }()
     
@@ -120,5 +122,15 @@ class MyReceiptsView: UIView {
             contentBackground.bottomAnchor.constraint(equalTo: bottomAnchor),
             
         ])
+    }
+    
+    @objc
+    private func didTapBackButton() {
+        
+    }
+    
+    @objc
+    private func didTapAddButton() {
+        
     }
 }
