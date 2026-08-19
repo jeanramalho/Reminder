@@ -26,19 +26,22 @@ class MyReceiptsView: UIView {
         return button
     }()
     
-    let titleLable: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Minhas Receitas"
+        label.font = Typograph.heading
         label.textColor = Colors.primaryBlueBase
         return label
     }()
     
-    let subtitleLable: UILabel = {
+    let subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Acompanhe seus medicamentos cadastrados e gerencie seus lembretes"
-        label.textColor = Colors.primaryBlueBase
+        label.font = Typograph.body
+        label.textColor = Colors.gray200
+        label.numberOfLines = 0
         return label
     }()
     
@@ -61,6 +64,8 @@ class MyReceiptsView: UIView {
         
         addSubview(headerBackground)
         headerBackground.addSubview(backButton)
+        headerBackground.addSubview(titleLabel)
+        headerBackground.addSubview(subtitleLabel)
     }
     
     private func setupConstraints() {
@@ -74,6 +79,14 @@ class MyReceiptsView: UIView {
             backButton.leadingAnchor.constraint(equalTo: headerBackground.leadingAnchor, constant: Metrics.medium),
             backButton.heightAnchor.constraint(equalToConstant: 24),
             backButton.widthAnchor.constraint(equalToConstant: 24),
+            
+            titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: Metrics.medium),
+            titleLabel.leadingAnchor.constraint(equalTo: backButton.leadingAnchor),
+            
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.small),
+            subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            subtitleLabel.trailingAnchor.constraint(equalTo: headerBackground.trailingAnchor, constant: -Metrics.medium),
+            
             
         ])
     }
