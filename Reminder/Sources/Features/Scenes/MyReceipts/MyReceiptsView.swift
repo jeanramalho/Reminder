@@ -26,10 +26,18 @@ class MyReceiptsView: UIView {
         return button
     }()
     
-    let lable: UILabel = {
+    let titleLable: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Minhas Receitas"
+        label.textColor = Colors.primaryBlueBase
+        return label
+    }()
+    
+    let subtitleLable: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Acompanhe seus medicamentos cadastrados e gerencie seus lembretes"
         label.textColor = Colors.primaryBlueBase
         return label
     }()
