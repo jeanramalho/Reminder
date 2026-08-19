@@ -26,6 +26,14 @@ class MyReceiptsView: UIView {
         return button
     }()
     
+    let lable: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Minhas Receitas"
+        label.textColor = Colors.primaryBlueBase
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
