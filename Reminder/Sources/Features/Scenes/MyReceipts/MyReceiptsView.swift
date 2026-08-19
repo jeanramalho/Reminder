@@ -26,6 +26,15 @@ class MyReceiptsView: UIView {
         return button
     }()
     
+    let addButton: UIButton = {
+        let button = UIButton()
+        let image = UIImage(named: "add-button")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(image, for: .normal)
+        button.tintColor = Colors.primaryBlueBase
+        return button
+    }()
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
