@@ -54,6 +54,16 @@ class MyReceiptsView: UIView {
         return label
     }()
     
+    let contentBackground: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = Metrics.medium
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        view.layer.masksToBounds = true
+        view.backgroundColor = Colors.gray800
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -75,6 +85,9 @@ class MyReceiptsView: UIView {
         headerBackground.addSubview(backButton)
         headerBackground.addSubview(titleLabel)
         headerBackground.addSubview(subtitleLabel)
+        headerBackground.addSubview(addButton)
+        
+        addSubview(contentBackground)
     }
     
     private func setupConstraints() {
@@ -84,10 +97,15 @@ class MyReceiptsView: UIView {
             headerBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
             headerBackground.heightAnchor.constraint(equalToConstant: Metrics.backgroundProfileSize),
             
-            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -Metrics.small),
             backButton.leadingAnchor.constraint(equalTo: headerBackground.leadingAnchor, constant: Metrics.medium),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -Metrics.small),
             backButton.heightAnchor.constraint(equalToConstant: 24),
             backButton.widthAnchor.constraint(equalToConstant: 24),
+            
+            addButton.trailingAnchor.constraint(equalTo: headerBackground.trailingAnchor, constant: -Metrics.medium),
+            addButton.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
+            addButton.heightAnchor.constraint(equalToConstant: 40),
+            addButton.widthAnchor.constraint(equalToConstant: 40),
             
             titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: Metrics.medium),
             titleLabel.leadingAnchor.constraint(equalTo: backButton.leadingAnchor),
@@ -96,6 +114,10 @@ class MyReceiptsView: UIView {
             subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             subtitleLabel.trailingAnchor.constraint(equalTo: headerBackground.trailingAnchor, constant: -Metrics.medium),
             
+            contentBackground.topAnchor.constraint(equalTo: headerBackground.bottomAnchor, constant: -Metrics.small),
+            contentBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentBackground.bottomAnchor.constraint(equalTo: bottomAnchor),
             
         ])
     }
