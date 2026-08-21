@@ -77,3 +77,13 @@ extension ReminderFlowController: HomeFlowDelegate {
     
     
 }
+
+//MARK: - MyReceipts
+
+extension ReminderFlowController: MyReceiptsFlowDelegate {
+    func goToNewReceipts() {
+        
+    }
+    
+    
+}
