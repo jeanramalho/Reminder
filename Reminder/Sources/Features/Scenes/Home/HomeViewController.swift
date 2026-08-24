@@ -76,6 +76,11 @@ class HomeViewController: UIViewController {
             self?.didTapNewPrescriptionButton()
             
         }
+        
+        contentView.myPrescriptionButtons.tapAction = { [weak self] in
+            self?.didTapMyPrescriptions()
+            
+        }
     }
     
     @objc
