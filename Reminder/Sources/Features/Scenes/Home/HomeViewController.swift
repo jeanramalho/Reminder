@@ -97,6 +97,10 @@ extension HomeViewController: HomeViewDelegate {
         selectProfileImage()
     }
     
+    func didTapMyPrescriptions() {
+        flowDelegate.navigateToMyRecipes()
+    }
+    
     func didTapNewPrescriptionButton() {
         flowDelegate.navigateToRecipes()
     }
