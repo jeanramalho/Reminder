@@ -82,7 +82,7 @@ extension ReminderFlowController: HomeFlowDelegate {
 
 extension ReminderFlowController: MyReceiptsFlowDelegate {
     func goToNewReceipts() {
-        
+         
     }
     
     
