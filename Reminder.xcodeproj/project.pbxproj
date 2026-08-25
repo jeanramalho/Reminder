@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE1D0C11302B4BD8002323D3 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = CE1D0C10302B4BD8002323D3 /* SQLite */; };
 		CE1D0C13302B4BD8002323D3 /* SQLite-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CE1D0C12302B4BD8002323D3 /* SQLite-Dynamic */; };
 		CE8DB6BF2FFD934E00F91EBF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6BE2FFD934E00F91EBF /* FirebaseAuth */; };
 		CE8DB6C12FFD934E00F91EBF /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C02FFD934E00F91EBF /* FirebaseCore */; };
@@ -46,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE1D0C11302B4BD8002323D3 /* SQLite in Frameworks */,
 				CE8DB6C32FFD934E00F91EBF /* FirebaseDatabase in Frameworks */,
 				CE8DB6C52FFD934E00F91EBF /* FirebaseFirestore in Frameworks */,
 				CE1D0C13302B4BD8002323D3 /* SQLite-Dynamic in Frameworks */,
@@ -100,7 +98,6 @@
 				CE8DB6C22FFD934E00F91EBF /* FirebaseDatabase */,
 				CE8DB6C42FFD934E00F91EBF /* FirebaseFirestore */,
 				CE8DB6C62FFD934E00F91EBF /* FirebaseStorage */,
-				CE1D0C10302B4BD8002323D3 /* SQLite */,
 				CE1D0C12302B4BD8002323D3 /* SQLite-Dynamic */,
 			);
 			productName = Reminder;
@@ -396,11 +393,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CE1D0C10302B4BD8002323D3 /* SQLite */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE1D0C0F302B4BD8002323D3 /* XCRemoteSwiftPackageReference "sqlite.swift" */;
-			productName = SQLite;
-		};
 		CE1D0C12302B4BD8002323D3 /* SQLite-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE1D0C0F302B4BD8002323D3 /* XCRemoteSwiftPackageReference "sqlite.swift" */;
