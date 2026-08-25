@@ -71,5 +71,41 @@ class RemedyCell: UITableViewCell {
         return button
     }()
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupView()
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupView() {
+        contentView.backgroundColor = Colors.gray700
+        contentView.layer.masksToBounds = true
+        contentView.layer.cornerRadius = 12
+        
+        setupHierarchy()
+        setupConstraints()
+    }
+    
+    private func setupHierarchy() {
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(timeBackgroundView)
+        contentView.addSubview(recurrenceBackgreounView)
+        contentView.addSubview(trashButton)
+       
+        timeBackgroundView.addSubview(watchIcon)
+        timeBackgroundView.addSubview(timeLabel)
+        
+        recurrenceBackgreounView.addSubview(recurrenceIcon)
+        recurrenceBackgreounView.addSubview(recurrenceLabel)
+        
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            
+        ])
+    }
 }
