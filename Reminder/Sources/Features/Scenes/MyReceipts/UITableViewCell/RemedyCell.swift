@@ -105,7 +105,7 @@ class RemedyCell: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: Metrics.medier),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Metrics.medier),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.medium),
             
             timeBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Metrics.small),
@@ -116,6 +116,14 @@ class RemedyCell: UITableViewCell {
             watchIcon.centerYAnchor.constraint(equalTo: timeBackgroundView.centerYAnchor),
             watchIcon.heightAnchor.constraint(equalToConstant: 16),
             watchIcon.widthAnchor.constraint(equalToConstant: 16),
+            
+            timeLabel.leadingAnchor.constraint(equalTo: watchIcon.trailingAnchor, constant: Metrics.tiny),
+            timeLabel.centerYAnchor.constraint(equalTo: timeBackgroundView.centerYAnchor),
+            timeLabel.trailingAnchor.constraint(equalTo: timeBackgroundView.trailingAnchor, constant: -Metrics.small),
+            
+            recurrenceBackgreounView.centerYAnchor.constraint(equalTo: timeBackgroundView.centerYAnchor),
+            recurrenceBackgreounView.leadingAnchor.constraint(equalTo: timeBackgroundView.trailingAnchor, constant: Metrics.tiny),
+            recurrenceBackgreounView.heightAnchor.constraint(equalToConstant: 28),
             
             
         ])
