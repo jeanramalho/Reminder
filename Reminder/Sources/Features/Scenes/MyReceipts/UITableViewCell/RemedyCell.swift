@@ -125,6 +125,21 @@ class RemedyCell: UITableViewCell {
             recurrenceBackgreounView.leadingAnchor.constraint(equalTo: timeBackgroundView.trailingAnchor, constant: Metrics.tiny),
             recurrenceBackgreounView.heightAnchor.constraint(equalToConstant: 28),
             
+            recurrenceIcon.leadingAnchor.constraint(equalTo: recurrenceBackgreounView.leadingAnchor, constant: Metrics.small),
+            recurrenceIcon.centerYAnchor.constraint(equalTo: recurrenceBackgreounView.centerYAnchor),
+            recurrenceIcon.heightAnchor.constraint(equalToConstant: 16),
+            recurrenceIcon.widthAnchor.constraint(equalToConstant: 16),
+            
+            recurrenceLabel.leadingAnchor.constraint(equalTo: recurrenceIcon.trailingAnchor, constant: Metrics.tiny),
+            recurrenceLabel.centerYAnchor.constraint(equalTo: recurrenceBackgreounView.centerYAnchor),
+            recurrenceLabel.trailingAnchor.constraint(equalTo: recurrenceBackgreounView.trailingAnchor, constant: -Metrics.small),
+            
+            trashButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Metrics.medium),
+            trashButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            trashButton.heightAnchor.constraint(equalToConstant: 16),
+            trashButton.widthAnchor.constraint(equalToConstant: 16),
+            
+            contentView.bottomAnchor.constraint(equalTo: timeBackgroundView.bottomAnchor, constant: Metrics.medium),
             
         ])
     }
