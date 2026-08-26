@@ -108,6 +108,10 @@ class RemedyCell: UITableViewCell {
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: Metrics.medier),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.medium),
             
+            timeBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Metrics.small),
+            timeBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.medium),
+            timeBackgroundView.heightAnchor.constraint(equalToConstant: 28),
+            
             
         ])
     }
