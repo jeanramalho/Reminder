@@ -105,6 +105,9 @@ class RemedyCell: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: Metrics.medier),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.medium),
+            
             
         ])
     }
