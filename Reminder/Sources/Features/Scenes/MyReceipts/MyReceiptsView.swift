@@ -98,6 +98,7 @@ class MyReceiptsView: UIView {
         headerBackground.addSubview(addButton)
         
         addSubview(contentBackground)
+        contentBackground.addSubview(tableView)
     }
     
     private func setupConstraints() {
