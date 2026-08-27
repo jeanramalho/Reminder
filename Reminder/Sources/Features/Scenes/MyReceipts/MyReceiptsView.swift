@@ -130,6 +130,11 @@ class MyReceiptsView: UIView {
             contentBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentBackground.bottomAnchor.constraint(equalTo: bottomAnchor),
             
+            tableView.topAnchor.constraint(equalTo: contentBackground.topAnchor, constant: Metrics.medium),
+            tableView.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
+            tableView.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
+            tableView.bottomAnchor.constraint(equalTo: contentBackground.bottomAnchor, constant: -Metrics.medium),
+            
         ])
     }
     
