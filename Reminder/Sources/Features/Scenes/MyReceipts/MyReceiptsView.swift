@@ -66,6 +66,14 @@ class MyReceiptsView: UIView {
         return view
     }()
     
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        return tableView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
