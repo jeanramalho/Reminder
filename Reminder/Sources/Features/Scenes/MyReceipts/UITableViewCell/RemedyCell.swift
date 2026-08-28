@@ -65,8 +65,8 @@ class RemedyCell: UITableViewCell {
     
     private let trashButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
         let image = UIImage(named: "trash")
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(image, for: .normal)
         return button
     }()
@@ -134,7 +134,7 @@ class RemedyCell: UITableViewCell {
             recurrenceLabel.centerYAnchor.constraint(equalTo: recurrenceBackgreounView.centerYAnchor),
             recurrenceLabel.trailingAnchor.constraint(equalTo: recurrenceBackgreounView.trailingAnchor, constant: -Metrics.small),
             
-            trashButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Metrics.medium),
+            trashButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Metrics.medium),
             trashButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
             trashButton.heightAnchor.constraint(equalToConstant: 16),
             trashButton.widthAnchor.constraint(equalToConstant: 16),
