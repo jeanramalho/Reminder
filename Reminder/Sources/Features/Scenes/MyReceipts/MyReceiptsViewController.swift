@@ -57,7 +57,7 @@ class MyReceiptsViewController: UIViewController {
     private func setupTableView() {
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
-        contentView.tableView.register(RemedyCell.self, forHeaderFooterViewReuseIdentifier: RemedyCell.identifier)
+        contentView.tableView.register(RemedyCell.self, forCellReuseIdentifier: RemedyCell.identifier)
         contentView.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
     }
 }
