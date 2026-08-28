@@ -58,7 +58,7 @@ class RemedyCell: UITableViewCell {
     }()
         
     private let recurrenceIcon: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "recurrence-icon"))
+        let imageView = UIImageView(image: UIImage(named: "repeat"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
