@@ -11,6 +11,8 @@ class MyReceiptsViewController: UIViewController {
     let contentView: MyReceiptsView
     weak var flowDelegate: MyReceiptsFlowDelegate?
     let viewModel = MyReceiptsViewModel()
+    
+    private var medicines: [(String, String, String)] = []
         
     init(contentView: MyReceiptsView, flowDelegate: MyReceiptsFlowDelegate) {
         self.contentView = contentView
@@ -54,14 +56,14 @@ class MyReceiptsViewController: UIViewController {
     }
     
     private func loadData() {
-        
+       medicines = viewModel.fetchData()
     }
 }
 
 extension MyReceiptsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return mockMedicamentos.count
+        return medicines.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,7 +72,7 @@ extension MyReceiptsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RemedyCell.identifier, for: indexPath) as? RemedyCell else {return UITableViewCell()}
-        let medicamento = mockMedicamentos[indexPath.section]
+        let medicamento = medicines[indexPath.section]
         cell.configureCell(title: medicamento.0, time: medicamento.1, recurrence: medicamento.2)
         return cell
     }
