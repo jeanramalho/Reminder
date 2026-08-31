@@ -8,4 +8,7 @@ import Foundation
 
 class MyReceiptsViewModel {
     
+    func fetchData() -> [(String, String, String)] {
+       return DBHelper.shared.fetchReceipts()
+    }
 }
