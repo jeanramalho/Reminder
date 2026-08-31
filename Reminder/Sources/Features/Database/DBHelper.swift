@@ -73,4 +73,24 @@ class DBHelper {
         sqlite3_finalize(statement)
     }
     
+    func fetchReceipts() -> [(String, String, String)] {
+        let fetchQuery = "SELECT remedy, time, recurrence FROM receipts"
+        var statement: OpaquePointer?
+        var receipts: [(String, String, String)] = []
+        
+        if sqlite3_prepare(db, fetchQuery, -1, &statement, nil) == SQLITE_OK {
+            while sqlite3_step(statement) == SQLITE_ROW {
+                let remedy = String(cString: sqlite3_column_text(statement, 0))
+                let time = String(cString: sqlite3_column_text(statement, 1))
+                let recurrence = String(cString: sqlite3_column_text(statement, 2))
+                receipts.append((remedy, time, recurrence))
+            }
+        } else {
+            print("SELECT statetment falhou")
+        }
+        
+        sqlite3_finalize(statement)
+        return receipts
+    }
+    
 }
