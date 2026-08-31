@@ -12,7 +12,7 @@ class MyReceiptsViewController: UIViewController {
     weak var flowDelegate: MyReceiptsFlowDelegate?
     let viewModel = MyReceiptsViewModel()
     
-    private var medicines: [(String, String, String)] = []
+    private var medicines: [Medicine] = []
         
     init(contentView: MyReceiptsView, flowDelegate: MyReceiptsFlowDelegate) {
         self.contentView = contentView
@@ -71,9 +71,14 @@ extension MyReceiptsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RemedyCell.identifier, for: indexPath) as? RemedyCell else {return UITableViewCell()}
+        
         let medicamento = medicines[indexPath.section]
-        cell.configureCell(title: medicamento.0, time: medicamento.1, recurrence: medicamento.2)
+        
+        cell.configureCell(title: medicamento.remedy,
+                           time: medicamento.time,
+                           recurrence: medicamento.recurrence)
         return cell
     }
     
