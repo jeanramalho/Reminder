@@ -84,7 +84,8 @@ extension MyReceiptsViewController: UITableViewDelegate, UITableViewDataSource {
             
             guard let self = self else {return}
             self.viewModel.deleteReceipt(byId: medicamento.id)
-            
+            self.medicines.remove(at: indexPath.row)
+            tableView.deleteSections(IndexSet(integer: indexPath.section), with: .automatic)                        
         }
         return cell
     }

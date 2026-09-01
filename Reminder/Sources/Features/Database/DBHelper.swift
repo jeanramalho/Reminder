@@ -74,7 +74,7 @@ class DBHelper {
     }
     
     func fetchReceipts() -> [Medicine] {
-        let fetchQuery = "SELECT remedy, time, recurrence FROM receipts"
+        let fetchQuery = "SELECT * FROM receipts"
         var statement: OpaquePointer?
         var receipts: [Medicine] = []
         
