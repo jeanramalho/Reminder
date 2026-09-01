@@ -79,6 +79,13 @@ extension MyReceiptsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(title: medicamento.remedy,
                            time: medicamento.time,
                            recurrence: medicamento.recurrence)
+        
+        cell.onDelete = { [weak self] in
+            
+            guard let self = self else {return}
+            self.viewModel.deleteReceipt(byId: medicamento.id)
+            
+        }
         return cell
     }
     

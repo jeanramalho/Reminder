@@ -81,9 +81,9 @@ class DBHelper {
         if sqlite3_prepare(db, fetchQuery, -1, &statement, nil) == SQLITE_OK {
             while sqlite3_step(statement) == SQLITE_ROW {
                 let id = Int(sqlite3_column_int(statement, 0))
-                let remedy = String(cString: sqlite3_column_text(statement, 1))
-                let time = String(cString: sqlite3_column_text(statement, 2))
-                let recurrence = String(cString: sqlite3_column_text(statement, 3))
+                let remedy = sqlite3_column_text(statement, 1).flatMap { String(cString: $0) } ?? "Unknown"
+                let time = sqlite3_column_text(statement, 2).flatMap { String(cString: $0) } ?? "Unknown"
+                let recurrence = sqlite3_column_text(statement, 3).flatMap { String(cString: $0) } ?? "Unknown"
                 receipts.append(Medicine(id: id,
                                          remedy: remedy,
                                          time: time,
