@@ -69,6 +69,7 @@ class RemedyCell: UITableViewCell {
         let button = UIButton()
         let image = UIImage(named: "trash")
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(trashButtonTapped), for: .touchUpInside)
         button.setImage(image, for: .normal)
         return button
     }()
