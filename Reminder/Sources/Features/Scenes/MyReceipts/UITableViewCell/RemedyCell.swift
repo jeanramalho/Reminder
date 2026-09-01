@@ -147,9 +147,15 @@ class RemedyCell: UITableViewCell {
         ])
     }
     
+    @objc
+    private func trashButtonTapped() {
+        onDelete?()
+    }
+    
     func configureCell(title: String, time: String, recurrence: String) {
         titleLabel.text = title
         timeLabel.text = time
         recurrenceLabel.text = recurrence
     }
+    
 }
