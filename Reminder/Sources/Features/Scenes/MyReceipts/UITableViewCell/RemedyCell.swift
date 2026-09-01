@@ -11,6 +11,8 @@ class RemedyCell: UITableViewCell {
     
     static let identifier = "RemedyCell"
     
+    var onDelete: (() -> Void)?
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
