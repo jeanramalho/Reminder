@@ -82,13 +82,15 @@ extension MyReceiptsViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.onDelete = { [weak self] in
             guard let self = self else {return}
-            
-            if indexPath.section < self.medicines.count {
-               
-                self.viewModel.deleteReceipt(byId: medicamento.id)
-                self.medicines.remove(at: indexPath.row)
-                tableView.deleteSections(IndexSet(integer: indexPath.section), with: .automatic)
-            } else {
+            if let actualIndexPath = tableView.indexPath(for: cell) {
+                if actualIndexPath.section < self.medicines.count {
+                   
+                    self.viewModel.deleteReceipt(byId: self.medicines[actualIndexPath.section].id)
+                    self.medicines.remove(at: actualIndexPath.row)
+                    tableView.deleteSections(IndexSet(integer: actualIndexPath.section), with: .automatic)
+                }
+            }
+             else {
                 print("Erro ao excluir uma sessao invalida")
             }
                                   
