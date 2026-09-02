@@ -33,6 +33,7 @@ class MyReceiptsViewController: UIViewController {
     
     private func setup() {
         view.backgroundColor = Colors.gray600
+        contentView.delegate = self
         
         setupHierarchy()
         setupConstraints()
