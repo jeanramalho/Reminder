@@ -115,7 +115,7 @@ extension MyReceiptsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MyReceiptsViewController: MyReceiptsViewDelegate {
     func didTapBackButton() {
-        flowDelegate.
+        flowDelegate?.popScreen()
     }
     
     func didTapAddButton() {

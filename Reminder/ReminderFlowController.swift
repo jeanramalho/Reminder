@@ -87,8 +87,12 @@ extension ReminderFlowController: HomeFlowDelegate {
 //MARK: - MyReceipts
 
 extension ReminderFlowController: MyReceiptsFlowDelegate {
+    func popScreen() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func goToNewReceipts() {
-         
+        self.navigateToRecipes()
     }
     
     
