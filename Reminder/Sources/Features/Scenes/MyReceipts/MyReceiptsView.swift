@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 
 class MyReceiptsView: UIView {
-   // weak public var delegate: MyReceiptsViewDelegate?
+    weak public var delegate: MyReceiptsViewDelegate?
     
     let headerBackground: UIView = {
         let view = UIView()
@@ -140,7 +140,7 @@ class MyReceiptsView: UIView {
     
     @objc
     private func didTapBackButton() {
-        
+        delegate?.didTapBackButton()
     }
     
     @objc
@@ -148,3 +148,5 @@ class MyReceiptsView: UIView {
         
     }
 }
+
+

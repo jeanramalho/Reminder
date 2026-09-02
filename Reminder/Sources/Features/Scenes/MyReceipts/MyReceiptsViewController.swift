@@ -89,8 +89,7 @@ extension MyReceiptsViewController: UITableViewDelegate, UITableViewDataSource {
                     self.medicines.remove(at: actualIndexPath.row)
                     tableView.deleteSections(IndexSet(integer: actualIndexPath.section), with: .automatic)
                 }
-            }
-             else {
+            } else {
                 print("Erro ao excluir uma sessao invalida")
             }
                                   
