@@ -145,7 +145,7 @@ class MyReceiptsView: UIView {
     
     @objc
     private func didTapAddButton() {
-        
+        delegate?.didTapAddButton()
     }
 }
 

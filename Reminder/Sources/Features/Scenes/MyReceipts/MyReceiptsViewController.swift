@@ -112,3 +112,15 @@ extension MyReceiptsViewController: UITableViewDelegate, UITableViewDataSource {
         return 4
     }
 }
+
+extension MyReceiptsViewController: MyReceiptsViewDelegate {
+    func didTapBackButton() {
+        flowDelegate.
+    }
+    
+    func didTapAddButton() {
+        flowDelegate?.goToNewReceipts()
+    }
+    
+    
+}
