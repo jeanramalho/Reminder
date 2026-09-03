@@ -13,6 +13,8 @@
 		CE8DB6C32FFD934E00F91EBF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C22FFD934E00F91EBF /* FirebaseDatabase */; };
 		CE8DB6C52FFD934E00F91EBF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C42FFD934E00F91EBF /* FirebaseFirestore */; };
 		CE8DB6C72FFD934E00F91EBF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C62FFD934E00F91EBF /* FirebaseStorage */; };
+		CEEF94203049A89E004A6668 /* DotLottie in Frameworks */ = {isa = PBXBuildFile; productRef = CEEF941F3049A89E004A6668 /* DotLottie */; };
+		CEEF94223049A89E004A6668 /* DotLottiePlayer in Frameworks */ = {isa = PBXBuildFile; productRef = CEEF94213049A89E004A6668 /* DotLottiePlayer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,8 +51,10 @@
 				CE8DB6C52FFD934E00F91EBF /* FirebaseFirestore in Frameworks */,
 				CE1D0C13302B4BD8002323D3 /* SQLite-Dynamic in Frameworks */,
 				CE8DB6C12FFD934E00F91EBF /* FirebaseCore in Frameworks */,
+				CEEF94223049A89E004A6668 /* DotLottiePlayer in Frameworks */,
 				CE8DB6C72FFD934E00F91EBF /* FirebaseStorage in Frameworks */,
 				CE8DB6BF2FFD934E00F91EBF /* FirebaseAuth in Frameworks */,
+				CEEF94203049A89E004A6668 /* DotLottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +103,8 @@
 				CE8DB6C42FFD934E00F91EBF /* FirebaseFirestore */,
 				CE8DB6C62FFD934E00F91EBF /* FirebaseStorage */,
 				CE1D0C12302B4BD8002323D3 /* SQLite-Dynamic */,
+				CEEF941F3049A89E004A6668 /* DotLottie */,
+				CEEF94213049A89E004A6668 /* DotLottiePlayer */,
 			);
 			productName = Reminder;
 			productReference = CE5B76D12F968A8200A52F5A /* Reminder.app */;
@@ -131,6 +137,7 @@
 			packageReferences = (
 				CE8DB6BD2FFD934E00F91EBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				CE1D0C0F302B4BD8002323D3 /* XCRemoteSwiftPackageReference "sqlite.swift" */,
+				CEEF941E3049A89D004A6668 /* XCRemoteSwiftPackageReference "dotlottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CE5B76D22F968A8200A52F5A /* Products */;
@@ -390,6 +397,14 @@
 				minimumVersion = 12.15.0;
 			};
 		};
+		CEEF941E3049A89D004A6668 /* XCRemoteSwiftPackageReference "dotlottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LottieFiles/dotlottie-ios.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -422,6 +437,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE8DB6BD2FFD934E00F91EBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		CEEF941F3049A89E004A6668 /* DotLottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEEF941E3049A89D004A6668 /* XCRemoteSwiftPackageReference "dotlottie-ios" */;
+			productName = DotLottie;
+		};
+		CEEF94213049A89E004A6668 /* DotLottiePlayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEEF941E3049A89D004A6668 /* XCRemoteSwiftPackageReference "dotlottie-ios" */;
+			productName = DotLottiePlayer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
