@@ -6,6 +6,7 @@
 //
 import Foundation
 import UIKit
+import DotLottie
 
 class MyReceiptsView: UIView {
     weak public var delegate: MyReceiptsViewDelegate?
@@ -35,6 +36,11 @@ class MyReceiptsView: UIView {
         button.tintColor = Colors.primaryBlueBase
         button.addTarget(self, action: #selector(didTapAddButton), for: .touchUpInside)
         return button
+    }()
+    
+    private let successAnimationView: DotLottieAnimationView = {
+        let animationView = DotLottieAnimationView
+        animationView.layer.name = "successAntimation"
     }()
     
     let titleLabel: UILabel = {
