@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		CE1D0C13302B4BD8002323D3 /* SQLite-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CE1D0C12302B4BD8002323D3 /* SQLite-Dynamic */; };
+		CE8B0B40304AF3A900846DA8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CE8B0B3F304AF3A900846DA8 /* Lottie */; };
 		CE8DB6BF2FFD934E00F91EBF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6BE2FFD934E00F91EBF /* FirebaseAuth */; };
 		CE8DB6C12FFD934E00F91EBF /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C02FFD934E00F91EBF /* FirebaseCore */; };
 		CE8DB6C32FFD934E00F91EBF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C22FFD934E00F91EBF /* FirebaseDatabase */; };
 		CE8DB6C52FFD934E00F91EBF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C42FFD934E00F91EBF /* FirebaseFirestore */; };
 		CE8DB6C72FFD934E00F91EBF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C62FFD934E00F91EBF /* FirebaseStorage */; };
-		CEEF94203049A89E004A6668 /* DotLottie in Frameworks */ = {isa = PBXBuildFile; productRef = CEEF941F3049A89E004A6668 /* DotLottie */; };
 		CEEF94223049A89E004A6668 /* DotLottiePlayer in Frameworks */ = {isa = PBXBuildFile; productRef = CEEF94213049A89E004A6668 /* DotLottiePlayer */; };
 /* End PBXBuildFile section */
 
@@ -49,12 +49,12 @@
 			files = (
 				CE8DB6C32FFD934E00F91EBF /* FirebaseDatabase in Frameworks */,
 				CE8DB6C52FFD934E00F91EBF /* FirebaseFirestore in Frameworks */,
+				CE8B0B40304AF3A900846DA8 /* Lottie in Frameworks */,
 				CE1D0C13302B4BD8002323D3 /* SQLite-Dynamic in Frameworks */,
 				CE8DB6C12FFD934E00F91EBF /* FirebaseCore in Frameworks */,
 				CEEF94223049A89E004A6668 /* DotLottiePlayer in Frameworks */,
 				CE8DB6C72FFD934E00F91EBF /* FirebaseStorage in Frameworks */,
 				CE8DB6BF2FFD934E00F91EBF /* FirebaseAuth in Frameworks */,
-				CEEF94203049A89E004A6668 /* DotLottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +105,7 @@
 				CE1D0C12302B4BD8002323D3 /* SQLite-Dynamic */,
 				CEEF941F3049A89E004A6668 /* DotLottie */,
 				CEEF94213049A89E004A6668 /* DotLottiePlayer */,
+				CE8B0B3F304AF3A900846DA8 /* Lottie */,
 			);
 			productName = Reminder;
 			productReference = CE5B76D12F968A8200A52F5A /* Reminder.app */;
@@ -138,6 +139,7 @@
 				CE8DB6BD2FFD934E00F91EBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				CE1D0C0F302B4BD8002323D3 /* XCRemoteSwiftPackageReference "sqlite.swift" */,
 				CEEF941E3049A89D004A6668 /* XCRemoteSwiftPackageReference "dotlottie-ios" */,
+				CE8B0B3E304AF3A900846DA8 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CE5B76D22F968A8200A52F5A /* Products */;
@@ -389,6 +391,14 @@
 				minimumVersion = 0.16.0;
 			};
 		};
+		CE8B0B3E304AF3A900846DA8 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.6.1;
+			};
+		};
 		CE8DB6BD2FFD934E00F91EBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -412,6 +422,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE1D0C0F302B4BD8002323D3 /* XCRemoteSwiftPackageReference "sqlite.swift" */;
 			productName = "SQLite-Dynamic";
+		};
+		CE8B0B3F304AF3A900846DA8 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE8B0B3E304AF3A900846DA8 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
 		};
 		CE8DB6BE2FFD934E00F91EBF /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
