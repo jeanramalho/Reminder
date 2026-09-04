@@ -38,10 +38,17 @@ class MyReceiptsView: UIView {
         return button
     }()
     
-    private let successAnimationView: DotLottieAnimationView = {
-        let animationView = DotLottieAnimationView
-        animationView.layer.name = "successAntimation"
+    private var successAnimation: DotLottieAnimation = {
+        let animation = DotLottieAnimation(
+            fileName: "successAntimation",
+            config: AnimationConfig(
+            autoplay: true,
+            loop: true))
+        return animation
     }()
+
+    private let successAnimationView = successAnimation.view()
+    
     
     let titleLabel: UILabel = {
         let label = UILabel()
