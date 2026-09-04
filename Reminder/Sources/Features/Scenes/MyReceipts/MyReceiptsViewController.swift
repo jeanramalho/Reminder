@@ -40,7 +40,6 @@ class MyReceiptsViewController: UIViewController {
     }
     
     private func setupHierarchy() {
-        
         view.addSubview(contentView)
     }
     

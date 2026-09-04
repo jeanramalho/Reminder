@@ -6,7 +6,6 @@
 //
 import Foundation
 import UIKit
-import Lottie
 
 class MyReceiptsView: UIView {
     weak public var delegate: MyReceiptsViewDelegate?
@@ -37,16 +36,6 @@ class MyReceiptsView: UIView {
         button.addTarget(self, action: #selector(didTapAddButton), for: .touchUpInside)
         return button
     }()
-
-    private let successAnimationView: LottieAnimationView = {
-        let animationView = LottieAnimationView(name: "successAnimation")
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = .playOnce
-        animationView.isHidden = true
-        return animationView
-    }()
-    
     
     let titleLabel: UILabel = {
         let label = UILabel()
