@@ -40,9 +40,9 @@ class MyReceiptsView: UIView {
 
     private let successAnimationView: LottieAnimationView = {
         let animationView = LottieAnimationView(name: "successAnimation")
-        animationview.translatesAutoresizingMaskIntoConstraints = false
+        animationView.translatesAutoresizingMaskIntoConstraints = false
         animationView.contentMode = .scaleAspectFit
-        amimationView.loopMode = .playOnce
+        animationView.loopMode = .playOnce
         animationView.isHidden = true
         return animationView
     }()
