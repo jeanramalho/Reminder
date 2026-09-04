@@ -6,7 +6,7 @@
 //
 import Foundation
 import UIKit
-import Lottie
+
 class NewReceiptView: UIView {
     
     let backButton: UIButton = {
@@ -75,16 +75,6 @@ class NewReceiptView: UIView {
         button.setTitleColor(Colors.gray800, for: .normal)
         return button
     }()
-    
-    private let successAnimationView: LottieAnimationView = {
-        let animationView = LottieAnimationView(name: "successAnimation")
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = .playOnce
-        animationView.isHidden = true
-        return animationView
-    }()
-
     
     override init(frame: CGRect) {
         super.init(frame: frame)

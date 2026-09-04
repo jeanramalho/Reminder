@@ -6,12 +6,23 @@
 //
 import Foundation
 import UIKit
+import Lottie
 
 
 class NewReceiptViewController: UIViewController {
     
     private let contentView: NewReceiptView
     private let viewModel: NewReceiptViewModel
+    
+    private let successAnimationView: LottieAnimationView = {
+        let animationView = LottieAnimationView(name: "successAnimation")
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .playOnce
+        animationView.isHidden = true
+        return animationView
+    }()
+
     
     init(contentView: NewReceiptView, viewModel: NewReceiptViewModel) {
         self.contentView = contentView
@@ -38,6 +49,7 @@ class NewReceiptViewController: UIViewController {
     
     private func setupHierarchy() {
         view.addSubview(contentView)
+        view.addSubview(successAnimationView)
     }
     
     private func setupConstraints() {
