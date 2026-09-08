@@ -15,7 +15,7 @@ class NewReceiptViewController: UIViewController {
     private let viewModel: NewReceiptViewModel
     
     private let successAnimationView: LottieAnimationView = {
-        let animationView = LottieAnimationView(name: "successAnimation")
+        let animationView = LottieAnimationView(name: "success.json")
         animationView.translatesAutoresizingMaskIntoConstraints = false
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .playOnce
@@ -96,10 +96,11 @@ class NewReceiptViewController: UIViewController {
     
     private func playSuccessAnimation() {
         successAnimationView.isHidden = false
+        print("Animação chamada")
         successAnimationView.play { [weak self] finished in
-            guard let self = self else {return}
             if finished {
-                self.successAnimationView.isHidden = true
+                self?.successAnimationView.isHidden = true
+    
             }
         }
     }

@@ -31,6 +31,13 @@ class MyReceiptsViewController: UIViewController {
         loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
+        contentView.tableView.reloadData()
+    }
+        
+    
     private func setup() {
         view.backgroundColor = Colors.gray600
         contentView.delegate = self

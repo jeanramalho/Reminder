@@ -14,7 +14,6 @@
 		CE8DB6C32FFD934E00F91EBF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C22FFD934E00F91EBF /* FirebaseDatabase */; };
 		CE8DB6C52FFD934E00F91EBF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C42FFD934E00F91EBF /* FirebaseFirestore */; };
 		CE8DB6C72FFD934E00F91EBF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DB6C62FFD934E00F91EBF /* FirebaseStorage */; };
-		CEEF94223049A89E004A6668 /* DotLottiePlayer in Frameworks */ = {isa = PBXBuildFile; productRef = CEEF94213049A89E004A6668 /* DotLottiePlayer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +51,6 @@
 				CE8B0B40304AF3A900846DA8 /* Lottie in Frameworks */,
 				CE1D0C13302B4BD8002323D3 /* SQLite-Dynamic in Frameworks */,
 				CE8DB6C12FFD934E00F91EBF /* FirebaseCore in Frameworks */,
-				CEEF94223049A89E004A6668 /* DotLottiePlayer in Frameworks */,
 				CE8DB6C72FFD934E00F91EBF /* FirebaseStorage in Frameworks */,
 				CE8DB6BF2FFD934E00F91EBF /* FirebaseAuth in Frameworks */,
 			);
@@ -104,7 +102,6 @@
 				CE8DB6C62FFD934E00F91EBF /* FirebaseStorage */,
 				CE1D0C12302B4BD8002323D3 /* SQLite-Dynamic */,
 				CEEF941F3049A89E004A6668 /* DotLottie */,
-				CEEF94213049A89E004A6668 /* DotLottiePlayer */,
 				CE8B0B3F304AF3A900846DA8 /* Lottie */,
 			);
 			productName = Reminder;
@@ -457,11 +454,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CEEF941E3049A89D004A6668 /* XCRemoteSwiftPackageReference "dotlottie-ios" */;
 			productName = DotLottie;
-		};
-		CEEF94213049A89E004A6668 /* DotLottiePlayer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CEEF941E3049A89D004A6668 /* XCRemoteSwiftPackageReference "dotlottie-ios" */;
-			productName = DotLottiePlayer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
