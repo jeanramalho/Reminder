@@ -58,6 +58,8 @@ class NewReceiptViewController: UIViewController {
         NSLayoutConstraint.activate([
             successAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             successAnimationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            successAnimationView.heightAnchor.constraint(equalToConstant: 120),
+            successAnimationView.widthAnchor.constraint(equalToConstant: 120),
             
         ])
     }
