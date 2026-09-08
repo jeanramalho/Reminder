@@ -54,6 +54,12 @@ class NewReceiptViewController: UIViewController {
     
     private func setupConstraints() {
         setupContentViewToBounds(contentView: contentView)
+        
+        NSLayoutConstraint.activate([
+            successAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            successAnimationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+        ])
     }
     
     private func setupActions() {
