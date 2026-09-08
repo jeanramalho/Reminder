@@ -91,6 +91,12 @@ class NewReceiptViewController: UIViewController {
     }
     
     private func playSuccessAnimation() {
-        
+        successAnimationView.isHidden = false
+        successAnimationView.play { [weak self] finished in
+            guard let self = self else {return}
+            if finished {
+                self.successAnimationView.isHidden = true
+            }
+        }
     }
 }
