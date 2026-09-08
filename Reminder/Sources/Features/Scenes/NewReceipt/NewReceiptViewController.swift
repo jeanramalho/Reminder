@@ -86,6 +86,10 @@ class NewReceiptViewController: UIViewController {
                              recurrence: recurrence,
                              takeNow: takeNow)
         
+        contentView.remedyinput.cleanText()
+        contentView.timeInput.cleanText()
+        contentView.recurrenceInput.cleanText()
+        
         playSuccessAnimation()
         print("\(remedy) Adicionado com suceeso!")
     }

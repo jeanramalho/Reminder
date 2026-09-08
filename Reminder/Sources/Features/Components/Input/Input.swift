@@ -80,4 +80,8 @@ public class Input: UIView {
     func getText() -> String {
         return textField.text ?? ""
     }
+    
+    func cleanText() {
+        textField.text = ""
+    }
 }

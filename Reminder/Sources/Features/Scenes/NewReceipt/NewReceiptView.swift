@@ -161,7 +161,7 @@ class NewReceiptView: UIView {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didSelectRecurrence))
         toolbar.setItems([doneButton], animated: true)
         
-        recurrenceInput.textField.inputView = timePicker
+        recurrenceInput.textField.inputView = recurrencePicker
         recurrenceInput.textField.inputAccessoryView = toolbar
         
         recurrencePicker.delegate = self
