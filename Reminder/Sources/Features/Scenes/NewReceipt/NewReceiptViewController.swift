@@ -86,6 +86,11 @@ class NewReceiptViewController: UIViewController {
                              recurrence: recurrence,
                              takeNow: takeNow)
         
+        playSuccessAnimation()
         print("\(remedy) Adicionado com suceeso!")
+    }
+    
+    private func playSuccessAnimation() {
+        
     }
 }
