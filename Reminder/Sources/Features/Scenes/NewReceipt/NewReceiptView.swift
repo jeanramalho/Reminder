@@ -70,7 +70,7 @@ class NewReceiptView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("+ Adicionar", for: .normal)
         button.titleLabel?.font = Typograph.subHeading
-        button.backgroundColor = Colors.primaryRedBase
+        button.backgroundColor = button.isEnabled ? Colors.primaryRedBase : Colors.gray500
         button.layer.cornerRadius = 12
         button.setTitleColor(Colors.gray800, for: .normal)
         return button
