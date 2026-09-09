@@ -108,7 +108,7 @@ class NewReceiptView: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metrics.small),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metrics.medium),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             backButton.heightAnchor.constraint(equalToConstant: 24),
             backButton.widthAnchor.constraint(equalToConstant: 24),
