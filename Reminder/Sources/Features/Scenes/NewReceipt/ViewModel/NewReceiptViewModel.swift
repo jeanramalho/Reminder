@@ -14,4 +14,8 @@ class NewReceiptViewModel {
     private func scheduleNotification() {
         
     }
+    
+    private func getIntervalInHours(from recurrence: String) -> Int {
+        
+    }
 }
