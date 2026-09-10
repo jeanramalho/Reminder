@@ -5,17 +5,47 @@
 //  Created by Jean Ramalho on 13/08/26.
 //
 import Foundation
+import UserNotifications
 
 class NewReceiptViewModel {
     func addReceipt(remedy: String, time: String, recurrence: String, takeNow: Bool) {
         DBHelper.shared.insertReceipt(remedy: remedy, time: time, recurrence: recurrence, takeNow: takeNow)
+        scheduleNotification(remedy: remedy, time: time, recurrence: recurrence)
     }
     
     private func scheduleNotification(remedy: String, time: String, recurrence: String) {
+        let centerNotification = UNUserNotificationCenter.current()
         
+        let content = UNMutableNotificationContent()
+        content.title = "Hora de tomar o remédio"
+        content.body = "É hora de tomar o remédio \(remedy)"
+        content.sound = .default
+        
+        guard let interval = getIntervalInHours(from: recurrence) else {return}
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+        guard let initialDate = formatter.date(from: time) else {return}
+        
+        let calendar = Calendar.current
+        let initialComponents = calendar.dateComponents([.hour, .minute], from: initialDate)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: initialComponents, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: remedy,
+                                            content: content,
+                                            trigger: trigger)
+        
+        centerNotification.add(request) { error  in
+            if let error = error {
+                print("Erro ao agendar notificação: \(error.localizedDescription)")
+            } else {
+                print("Notificação agendada com sucesso para \(remedy) às \(time) com recorrência \(recurrence)")
+            }
+        }
     }
     
-    private func getIntervalInHours(from recurrence: String) -> Int {
+    private func getIntervalInHours(from recurrence: String) -> Int? {
         switch recurrence {
         case "De hora em hora":
             return 1
@@ -32,7 +62,7 @@ class NewReceiptViewModel {
         case "1 ao dia":
             return 24
         default:
-            return 8
+            return nil
         }
     }
     
