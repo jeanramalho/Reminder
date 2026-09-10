@@ -11,7 +11,7 @@ class NewReceiptViewModel {
         DBHelper.shared.insertReceipt(remedy: remedy, time: time, recurrence: recurrence, takeNow: takeNow)
     }
     
-    private func scheduleNotification() {
+    private func scheduleNotification(remedy: String, time: String, recurrence: String) {
         
     }
     
@@ -31,14 +31,9 @@ class NewReceiptViewModel {
             return 12
         case "1 ao dia":
             return 24
-            break
+        default:
+            return 8
         }
     }
-    
-    
-   
-    
-    
-    
     
 }
