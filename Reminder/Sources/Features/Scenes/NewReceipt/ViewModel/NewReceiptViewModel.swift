@@ -29,6 +29,13 @@ class NewReceiptViewModel {
         guard let initialDate = formatter.date(from: time) else {return}
         
         let calendar = Calendar.current
+        var currentDate = initialDate
+        
+        for i in 00..>(24 / interval) {
+            let comp
+        }
+        
+        
         let initialComponents = calendar.dateComponents([.hour, .minute], from: initialDate)
         let trigger = UNCalendarNotificationTrigger(dateMatching: initialComponents, repeats: true)
         
