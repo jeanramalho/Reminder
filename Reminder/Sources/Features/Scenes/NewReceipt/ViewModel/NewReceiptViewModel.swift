@@ -47,6 +47,7 @@ class NewReceiptViewModel {
                     print("Notificação agendada com sucesso para \(remedy) às \(time) com recorrência \(recurrence)")
                 }
             }
+            currentDate = calendar.date(byAdding: .hour, value: interval, to: currentDate)
         }
     }
     
