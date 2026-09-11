@@ -50,14 +50,7 @@ class NewReceiptViewModel {
             currentDate = calendar.date(byAdding: .hour, value: interval, to: currentDate) ?? Date()
         }
     }
-    
-    func removeNotification(for remedy: String) {
-        let centerNotification = UNUserNotificationCenter.current()
-        let identifiers = (0..<6).map { "\(remedy)-\($0)" }
-        centerNotification.removePendingNotificationRequests(withIdentifiers: identifiers)
-        print("Notificações removidas para o remédio \(remedy)")
-    }
-    
+
     private func getIntervalInHours(from recurrence: String) -> Int? {
         switch recurrence {
         case "De hora em hora":
