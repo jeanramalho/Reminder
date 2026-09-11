@@ -31,23 +31,21 @@ class NewReceiptViewModel {
         let calendar = Calendar.current
         var currentDate = initialDate
         
-        for i in 00..>(24 / interval) {
-            let comp
-        }
-        
-        
-        let initialComponents = calendar.dateComponents([.hour, .minute], from: initialDate)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: initialComponents, repeats: true)
-        
-        let request = UNNotificationRequest(identifier: remedy,
-                                            content: content,
-                                            trigger: trigger)
-        
-        centerNotification.add(request) { error  in
-            if let error = error {
-                print("Erro ao agendar notificação: \(error.localizedDescription)")
-            } else {
-                print("Notificação agendada com sucesso para \(remedy) às \(time) com recorrência \(recurrence)")
+        for i in 00..<(24 / interval) {
+            let components = calendar.dateComponents([.hour, .minute], from: currentDate)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+            
+            let request = UNNotificationRequest(identifier: "\(remedy)-\(i)",
+                                                content: content,
+                                                trigger: trigger)
+            
+            
+            centerNotification.add(request) { error  in
+                if let error = error {
+                    print("Erro ao agendar notificação: \(error.localizedDescription)")
+                } else {
+                    print("Notificação agendada com sucesso para \(remedy) às \(time) com recorrência \(recurrence)")
+                }
             }
         }
     }
