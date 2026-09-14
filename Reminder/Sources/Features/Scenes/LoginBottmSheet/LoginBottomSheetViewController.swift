@@ -33,6 +33,24 @@ class LoginBottomSheetViewController: UIViewController {
         bindViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+                                       
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     private func setup() {
         setupHierarchy()
         setupConstraints()
@@ -118,6 +136,16 @@ class LoginBottomSheetViewController: UIViewController {
         }) { _ in
             completion?()
         }
+    }
+    
+    @objc
+    private func keyboardWillShow(notification: Notification) {
+        
+    }
+    
+    @objc
+    private func keyboardWillHide() {
+        
     }
 }
 
