@@ -146,7 +146,7 @@ class LoginBottomSheetViewController: UIViewController {
         let keyboardHeight = keyboardFrame.height
         
         UIView.animate(withDuration: 0.3) {
-            self.view.frame.origin.y = -keyboardHeight / 2
+            self.view.frame.origin.y = -keyboardHeight / 1.4
         }
     }
     
