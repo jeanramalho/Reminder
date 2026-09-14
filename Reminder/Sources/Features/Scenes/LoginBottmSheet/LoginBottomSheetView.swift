@@ -146,5 +146,8 @@ class LoginBottomSheetView: UIView {
 }
 
 extension LoginBottomSheetView: UITextFieldDelegate {
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
