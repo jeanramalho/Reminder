@@ -140,6 +140,11 @@ class LoginBottomSheetView: UIView {
     }
     
     private func setupDelegates() {
-        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
+}
+
+extension LoginBottomSheetView: UITextFieldDelegate {
+    
 }
