@@ -140,7 +140,14 @@ class LoginBottomSheetViewController: UIViewController {
     
     @objc
     private func keyboardWillShow(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {return}
         
+        let keyboardHeight = keyboardFrame.height
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame.origin.y = -keyboardHeight / 2
+        }
     }
     
     @objc
