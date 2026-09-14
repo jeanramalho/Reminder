@@ -76,6 +76,7 @@ class LoginBottomSheetView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupUI()
+        setupDelegates()
     }
     
     required init?(coder: NSCoder) {
@@ -136,5 +137,9 @@ class LoginBottomSheetView: UIView {
         guard let password = passwordTextField.text else {return}
         guard let user = emailTextField.text else {return}
         delegate?.sendLoginData(user: user, password: password)
+    }
+    
+    private func setupDelegates() {
+        
     }
 }
