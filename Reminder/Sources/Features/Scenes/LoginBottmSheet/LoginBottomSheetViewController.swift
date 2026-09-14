@@ -151,8 +151,10 @@ class LoginBottomSheetViewController: UIViewController {
     }
     
     @objc
-    private func keyboardWillHide() {
-        
+    private func keyboardWillHide(notification: Notification) {
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame.origin.y = 0
+        }
     }
 }
 
